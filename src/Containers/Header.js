@@ -1,5 +1,5 @@
 import React from "react";
-// import Navigation from "./Navigation";
+import Navigation from "./Navigation";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,7 +12,7 @@ const Header = () => {
         <Link to="/" exact>
           <img className="logo" src={logo} alt="logo" />
         </Link>
-        {/* <Navigation /> */}
+        <Navigation />
       </Navbar>
     </header>
   );
