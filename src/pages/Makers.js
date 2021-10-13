@@ -6,6 +6,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 const Makers = () => {
   const dispatch = useDispatch();
+  const makers = useSelector((state) => state.makers);
 
   return <div><h1>Tänne tulee artesaanit</h1></div>;
 };
