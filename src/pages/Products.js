@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "../Containers/ProductCard";
 import "../Containers/Products.css";
@@ -8,12 +8,13 @@ import { searchProduct } from "../store/actions/actions";
 const Products = () => {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.products);
+  const [loading, setLoading] = useState(false);
   const keyword = useSelector((state) => state.keyword);
 
-  const handleChange = (e) => {
+  /* const handleChange = (e) => {
     let keyword = e.target.value;
     dispatch(searchProduct(keyword));
-  };
+  }; */
 
   const filteredProducts = productList.map((tuote) => {
     return (
@@ -31,11 +32,11 @@ const Products = () => {
     );
   });
 
-  return (
+  /*  return (
     <div>
       <input type="text" placeholder="Search" onChange={handleChange} />
       <SearchBox />
-      {/* <div className="filteredProducts">{filteredProducts}</div> */}
+       <div className="filteredProducts">{filteredProducts}</div> 
       <ul>
         {filteredProducts
           .filter((tuote) =>
@@ -51,15 +52,16 @@ const Products = () => {
                 {tuote.price}€
               </div>
               <div>
-                {/*  <button onClick={() => dispatch(addProduct(product))}>
+                  <button onClick={() => dispatch(addProduct(product))}>
                   Add to Cart 
-                </button>*/}
+                </button>
               </div>
             </li>
           ))}
       </ul>
     </div>
-  );
+  ); */
+  return <main className="filteredProducts">{filteredProducts}</main>;
 };
 
 export default Products;
