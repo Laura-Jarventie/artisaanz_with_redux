@@ -1,0 +1,196 @@
+.productCard {
+  border-radius: 5px;
+  background-color: #fffefb;
+  box-shadow: 2px 2px 5px #0d0d0d;
+  height: 450px;
+  width: 350px;
+  margin: 2rem 0 2rem 5rem;
+  padding: 1rem;
+}
+
+.productCard img {
+  max-height: 250px;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  padding-bottom: 10px;
+}
+
+.productCard a {
+  text-decoration: none;
+  color: #0d0d0d;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-image: url("../assets/brush.png");
+  z-index: 1;
+}
+
+.productCard a:hover {
+  color: #a8611f;
+  text-decoration: underline;
+}
+
+.filteredProducts {
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  grid-auto-rows: auto;
+  grid-gap: 3rem;
+}
+
+#artisanbtn {
+  height: 45px;
+  width: 300px;
+  background-color: #583a22;
+  outline: 5px solid #583a22;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  margin: 20px;
+  font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+  background-color: #a8611f;
+}
+
+@media (max-width: 899px) {
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(1, 400px);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+  }
+}
+.btn-secondary {
+  height: 35px;
+  width: 150px;
+  background-color: #583a22;
+  outline: 5px solid #583a22;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  margin: 20px 0 20px 0;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+.btn-check:active + .btn-secondary,
+.btn-check:checked + .btn-secondary,
+.btn-secondary.active,
+.btn-secondary:active,
+.show > .btn-secondary.dropdown-toggle {
+  color: #583a22;
+  background-color: #fff;
+  border-color: #fff;
+}
+.btn-secondary:hover {
+  color: #583a22;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-primary {
+  height: 45px;
+  width: 200px;
+  background-color: #583a22;
+  outline: 5px solid #583a22;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  margin: 20px 0 20px 0;
+  font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+  background-color: #583a22;
+  border: 3px solid #fff;
+}
+
+.btn-primary:active {
+  background-color: #583a22;
+}
+
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: #583a22;
+  box-shadow: 0 0 0 0.25rem (#333);
+  border-color: #fff;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  background-color: #583a22;
+  box-shadow: 0 0 0 0.25rem (#333);
+  border-color: #fff;
+}
+.btn-check:active + .btn-primary:focus,
+.btn-check:checked + .btn-primary:focus,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #333;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem #333;
+}
+
+/*******tuotteet-sivut********/
+#products {
+  margin-top: 3rem;
+}
+
+@media (max-width: 899px) {
+  .productCard {
+    max-height: 450px;
+    width: 400px;
+    margin-left: 170px;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .productCard img {
+    max-height: 200px;
+    padding-bottom: 10px;
+  }
+
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(1, 400px);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .productCard {
+    max-height: 400px;
+    width: 250px;
+    margin: 20px 35px;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .productCard img {
+    max-height: 200px;
+    padding-bottom: 10px;
+  }
+
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(1, 250px);
+  }
+
+  .popup img {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainImage img {
+    display: block;
+  }
+}
