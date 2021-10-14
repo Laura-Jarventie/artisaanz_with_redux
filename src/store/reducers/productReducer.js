@@ -5,6 +5,10 @@ const productReducer = (state = [], action) => {
     case actionTypes.INIT_PRODUCTS:
       return action.data;
 
+    case actionTypes.SEARCH_PRODUCT:
+      const keyword = action.payload;
+      return { ...state, keyword: keyword };
+
     default:
       return state;
   }
