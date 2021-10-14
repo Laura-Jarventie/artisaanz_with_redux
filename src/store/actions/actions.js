@@ -2,6 +2,7 @@ import { getAllProducts, getMakers } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
 export const INIT_MAKERS = "INIT_MAKERS";
+export const SELECT_MAKER = "SELECT_MAKER";
 
 export const initializeProducts = () => {
     return async (dispatch) => {
@@ -19,6 +20,15 @@ export const initializeMakers = () => {
       dispatch({
         type: INIT_MAKERS,
         data: makers,
+      });
+    };
+  };
+
+export const makerName = (makerName) => {
+    return (dispatch) => {
+      dispatch({
+        type: SELECT_MAKER,
+        data: makerName,
       });
     };
   };
