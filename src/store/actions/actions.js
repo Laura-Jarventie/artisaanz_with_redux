@@ -1,9 +1,10 @@
-import { getAllProducts, getMakers } from "../../services/services";
+import { getAllProducts, getMakers, getSingleProduct } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
 export const INIT_MAKERS = "INIT_MAKERS";
 export const SELECT_MAKER = "SELECT_MAKER";
 export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
+export const SINGLE_PRODUCT = "SINGLE_PRODUCT";
 
 export const initializeProducts = () => {
   return async (dispatch) => {
@@ -33,3 +34,14 @@ export const makerName = (makerName) => {
     });
   };
 };
+
+export const singleProduct = (id) => {
+  return async (dispatch) => {
+    const singleProductData = await getSingleProduct(id);
+    dispatch({
+      type: SINGLE_PRODUCT,
+      data: singleProductData,
+    });
+  };
+};
+

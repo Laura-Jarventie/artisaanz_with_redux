@@ -11,3 +11,8 @@ export const getMakers = async () => {
     const response = await axios.get(baseUrl + '/seller/all');
     return response.data;
 };
+
+export const getSingleProduct = async (id) => {
+    const response = await axios.get(baseUrl + '/product/find/' + id);
+    return response.data;
+};
