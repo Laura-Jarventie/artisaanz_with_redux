@@ -8,10 +8,10 @@ import "../Components/ProductSingle.css";
 const ProductSingle = () => {
 
 const dispatch = useDispatch();
-const tuotteet = useSelector((state) => state.single);
 let tuoteData = undefined;
+const tuotteet = useSelector((state) => state.single);
 const history = useHistory();
-console.log(tuotteet.id);
+console.log(tuotteet);
 
 tuoteData = (
     <div className="singleProduct">
@@ -61,7 +61,6 @@ tuoteData = (
       </button>
     </div>
   );
-
 
   return(
   <main>
