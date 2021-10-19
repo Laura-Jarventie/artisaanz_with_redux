@@ -21,3 +21,8 @@ export const getCart = async () => {
     const response = await axios.get(baseUrl + '/cart/all');
     return response.data;
 };
+
+export const sendToCart = async (product) => {
+    const response = await axios.post(baseUrl + '/cart/add', product);
+    return response.data;
+  };

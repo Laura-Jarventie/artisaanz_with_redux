@@ -13,10 +13,8 @@ const Cart = () => {
           key={tuote.id}
           kuva={tuote.kuva}
           nimi={tuote.nimi} 
-          removeBtn={"-"}
-          lkm={1}
-          addBtn={"+"}
           hinta={tuote.hinta}
+          removeBtn={"Poista"}
         />
       </div>
     );
