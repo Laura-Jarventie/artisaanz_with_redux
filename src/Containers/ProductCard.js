@@ -1,10 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
-  const dispatch = useDispatch();
   return (
     <div className="productCard">
       <Link to={`/tuotteet/${id}`} >
