@@ -48,6 +48,9 @@ const Navigation = () => {
           <Link to="/uusiMyyjä"> Uusi myyjä</Link>
         </li>
         <li>
+          <Link to="/ostoskori"> Ostoskori (0)</Link>
+        </li>
+        <li>
           {/* <Dropdown>
             <DropdownButton alignRight title="Valitse myyjä">
               {userList}
