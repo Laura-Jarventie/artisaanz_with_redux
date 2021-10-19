@@ -8,7 +8,7 @@ const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
   const dispatch = useDispatch();
   return (
     <div className="productCard">
-      <Link to={`/tuotteet/${id}`} onClick={() => dispatch(singleProduct(id))}>
+      <Link to={`/tuotteet/${id}`} >
         <p>{nimi}</p>
       </Link>
       <Link to={`/tuotteet/${id}`}>
