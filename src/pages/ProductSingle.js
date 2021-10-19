@@ -1,12 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Components/ProductSingle.css";
 import { getSingleProduct } from "../services/services";
+import { addToCart } from "../store/actions/actions";
 
 const ProductSingle = () => {
+
+  const dispatch = useDispatch();
   const [tuotteet, setTuotteet] = useState();
   const [showPopup, setShowPopup] = useState(false);
   const [popupImg, setPopupImg] = useState();
@@ -26,7 +30,7 @@ const ProductSingle = () => {
   const Popup = () => {
     return (
       <div className="popup">
-        {/* <button onClick={close}>Sulje</button> */}
+        <button onClick={close}>Sulje</button>
         <img src={popupImg} onClick={close} alt="iso tuotekuva" />
       </div>
     );
@@ -84,7 +88,7 @@ const ProductSingle = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button className="buyBtn">Osta</button>
+        <button className="buyBtn" onClick={() => dispatch(addToCart(tuotteet))}>Osta</button>
         <button id="backbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
