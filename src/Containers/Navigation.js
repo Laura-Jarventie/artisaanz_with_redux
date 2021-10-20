@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -6,28 +7,31 @@ import axios from "axios";
 import "../App.css";
 
 const Navigation = () => {
-//   const [user, setUser] = useState([]);
+  const cart = useSelector((state) => state.cart);
+  let count = cart.length;
 
-//   useEffect(() => {
-//     axios
-//       .get("https://artisaanz.herokuapp.com/seller/all")
-//       .then((resp) => setUser(resp.data));
-//   }, []);
+  //   const [user, setUser] = useState([]);
 
-//   const userList = user.map((user) => {
-//     return (
-//       <Dropdown.Item>
-//         <Link
-//           to={{
-//             pathname: "/login",
-//             state: { seller: user.id },
-//           }}
-//         >
-//           {user.nimi}
-//         </Link>
-//       </Dropdown.Item>
-//     );
-//   });
+  //   useEffect(() => {
+  //     axios
+  //       .get("https://artisaanz.herokuapp.com/seller/all")
+  //       .then((resp) => setUser(resp.data));
+  //   }, []);
+
+  //   const userList = user.map((user) => {
+  //     return (
+  //       <Dropdown.Item>
+  //         <Link
+  //           to={{
+  //             pathname: "/login",
+  //             state: { seller: user.id },
+  //           }}
+  //         >
+  //           {user.nimi}
+  //         </Link>
+  //       </Dropdown.Item>
+  //     );
+  //   });
 
   return (
     <nav>
@@ -46,6 +50,9 @@ const Navigation = () => {
         </li>
         <li>
           <Link to="/uusiMyyjä"> Uusi myyjä</Link>
+        </li>
+        <li>
+          <Link to="/ostoskori"> Ostoskori ({count})</Link>
         </li>
         <li>
           {/* <Dropdown>

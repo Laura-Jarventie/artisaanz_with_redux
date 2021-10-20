@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
   return (
     <div className="productCard">
-      <Link to={`/tuotteet/${id}`}>
+      <Link to={`/tuotteet/${id}`} >
         <p>{nimi}</p>
       </Link>
       <Link to={`/tuotteet/${id}`}>
