@@ -11,6 +11,7 @@ const LoginForm = () => {
 
     let hashedPassword = await bcrypt.hash(password, 12);
     console.log("Hashed pw: " + hashedPassword);
+    // password = "virheellinenSalasana";
 
     // To compare input against hashed password in db after getting it with axios call by username:
     bcrypt.compare(password, hashedPassword).then((result) => {
