@@ -7,12 +7,15 @@ import productReducer from "./reducers/productReducer";
 import spinnerReducer from "./reducers/spinnerReducer";
 
 const reducers = combineReducers({
-    products: productReducer,
-    makers: makerReducer,
-    cart: cartReducer,
-    loading: spinnerReducer,
+  products: productReducer,
+  makers: makerReducer,
+  cart: cartReducer,
+  loading: spinnerReducer,
 });
 
-const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 export default store;

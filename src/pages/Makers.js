@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
@@ -11,7 +11,6 @@ const Makers = () => {
   const [loading, setLoading] = useState(false);
 
   const makers = makerList.map((maker) => {
-
     if (maker.id === 3) {
       return (
         <Card className="makersCard" key={maker.id}>
@@ -29,8 +28,7 @@ const Makers = () => {
               to={{
                 pathname: "/tuotteet",
               }}
-            onClick={() => dispatch(makerName(maker.nimi))}
-
+              onClick={() => dispatch(makerName(maker.nimi))}
             >
               Artesaanin tuotteet
             </Link>
@@ -56,7 +54,8 @@ const Makers = () => {
             <Link
               to={{
                 pathname: "/tuotteet",
-              }} onClick={() => dispatch(makerName(maker.nimi))}
+              }}
+              onClick={() => dispatch(makerName(maker.nimi))}
             >
               Artesaanin tuotteet
             </Link>

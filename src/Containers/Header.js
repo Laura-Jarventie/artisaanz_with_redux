@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <Navbar bg="light" expand="lg" fixed="top">
-        <Link to="/" >
+        <Link to="/" exact>
           <img className="logo" src={logo} alt="logo" />
         </Link>
         <Navigation />

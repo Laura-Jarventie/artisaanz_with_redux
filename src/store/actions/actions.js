@@ -1,4 +1,9 @@
-import { getAllProducts, getMakers, getCart, sendToCart } from "../../services/services";
+import {
+  getAllProducts,
+  getMakers,
+  getCart,
+  sendToCart,
+} from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
 export const INIT_MAKERS = "INIT_MAKERS";
@@ -55,8 +60,3 @@ export const makerName = (makerName) => {
     });
   };
 };
-
-
-
-
-
