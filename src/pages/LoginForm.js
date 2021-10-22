@@ -37,22 +37,16 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit} className="loginForm">
       <div>
-        <label for="exampleEmail">Email address </label>
+        <label for="exampleEmail">Sähköposti </label>
         <input
           type="email"
-          id="exampleEmail"
-          placeholder="email"
+          placeholder="nimi@esimerkki.com"
           name="email"
         ></input>
       </div>
       <div>
-        <label for="examplePw">Password </label>
-        <input
-          type="password"
-          id="examplePw"
-          placeholder="password"
-          name="password"
-        ></input>
+        <label for="examplePw">Salasana </label>
+        <input type="password" placeholder="salasana" name="password"></input>
       </div>
       <button type="submit">Login!</button>
     </form>

@@ -1,15 +1,11 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useHistory, Link, useParams } from "react-router-dom";
 import "../Components/ProductSingle.css";
 import { getSingleProduct } from "../services/services";
 import { addToCart } from "../store/actions/actions";
 
 const ProductSingle = () => {
-
   const dispatch = useDispatch();
   const [tuotteet, setTuotteet] = useState();
   const [showPopup, setShowPopup] = useState(false);
@@ -18,12 +14,12 @@ const ProductSingle = () => {
   const history = useHistory();
 
   useEffect(() => {
-		const fetchData = async () => {
-			const data = await getSingleProduct(id);
-			setTuotteet(data);
-		};
-		fetchData();
-	}, [id]);
+    const fetchData = async () => {
+      const data = await getSingleProduct(id);
+      setTuotteet(data);
+    };
+    fetchData();
+  }, [id]);
 
   let tuoteData = undefined;
 
@@ -88,7 +84,12 @@ const ProductSingle = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button className="buyBtn" onClick={() => dispatch(addToCart(tuotteet))}>Osta</button>
+        <button
+          className="buyBtn"
+          onClick={() => dispatch(addToCart(tuotteet))}
+        >
+          Osta
+        </button>
         <button id="backbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
