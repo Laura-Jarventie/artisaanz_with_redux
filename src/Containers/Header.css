@@ -1,0 +1,44 @@
+header {
+  position: relative;
+  display: flex;
+  height: 90px;
+  font-family: "EB Garamond", serif;
+  font-weight: 800;
+}
+
+header a {
+  text-decoration: none;
+  color: #0d0d0d;
+  font-size: 1.5rem;
+}
+
+header a:hover {
+  color: #a8611f;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+header nav ul li:hover {
+  transform: scale(1.1);
+}
+
+.logo {
+  width: 300px;
+}
+
+@media (max-width: 899px) {
+  .logo {
+    width: 200px;
+  }
+  header a {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+}
