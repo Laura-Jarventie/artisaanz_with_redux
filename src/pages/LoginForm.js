@@ -1,112 +1,60 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import axios from "axios";
-
-import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router";
+import bcrypt from "bcryptjs";
 
 const LoginForm = () => {
-  const [seller, setSeller] = useState();
-  const [logged, setLogged] = useState();
-  const history = useHistory();
-  const [user, setUser] = useState();
-  const [showPopOver, setShowPopOver] = useState(false);
-  const [popOverTitle, setPopOverTitle] = useState();
-  const [popOverMessage, setPopOverMessage] = useState();
-  const target = useRef(null);
-
-  const loginTry = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    let email = e.target.email.value;
+    let password = e.target.password.value;
+    console.log("Email: " + email + " and password: " + password);
 
-    if (data.username === user.username && data.password === user.password) {
-      <Redirect push to="/myyjälle" />;
-      setLogged(true);
-    } else {
-      setPopOverTitle("Kirjautuminen epäonnistui");
-      setPopOverMessage("Virheellinen käyttäjätunnus tai salasana.");
-      setShowPopOver(true);
-      console.log("incorrect username or password");
-      console.log(
-        "username should be: " +
-          user.username +
-          " and password:" +
-          user.password
-      );
-    }
+    let hashedPassword = await bcrypt.hash(password, 12);
+    console.log("Hashed pw: " + hashedPassword);
+
+    // To compare input against hashed password in db after getting it with axios call by username:
+    bcrypt.compare(password, hashedPassword).then((result) => {
+      console.log("It's the same password: " + result);
+    });
+
+    /***** TO CHECK CREDENTIALS: *****/
+
+    // axios
+    //   .post("https://127.0.0.1:8000/login", {
+    //     email: email,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.response.data);
+    //     alert("Invalid credentials!");
+    //   });
   };
-
-  useEffect(() => {
-    if ([history.location.state, seller]) {
-      setSeller(history.location.state.seller);
-      if (seller) {
-        axios
-          .get("https://artisaanz.herokuapp.com/seller/find/" + seller)
-          .then((response) => setUser(response.data));
-      }
-    }
-  });
-
-  const [data, setData] = useState({
-    username: "",
-    password: "",
-  });
-
-  const changeData = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
-  const popover = (
-    <Popover id="popover-basic">
-      <Popover.Title as="h3">{popOverTitle}</Popover.Title>
-      <Popover.Content>{popOverMessage}</Popover.Content>
-    </Popover>
-  );
 
   return (
-    <>
-      <form onSubmit={loginTry} className="signIn">
-        <Form.Control
-          type="text"
-          width="10px"
-          name="username"
-          maxLength="30"
-          placeholder="example"
-          onChange={changeData}
-          className="loginInputWidth"
-        />
-        <Form.Group>
-          <Form.Label htmlFor="">Password:</Form.Label>
-          <Form.Control
-            type="password"
-            width="10px"
-            name="password"
-            maxLength="30"
-            placeholder="secret"
-            className="loginInputWidth"
-            onChange={changeData}
-          />
-        </Form.Group>
-        <button type="submit" value="Send data" id="loginbtn" ref={target}>
-          Kirjaudu sisään/login
-        </button>
-        <Overlay
-          target={target.current}
-          placement="bottom"
-          show={showPopOver}
-          rootClose
-          onHide={() => setShowPopOver(false)}
-        >
-          {popover}
-        </Overlay>
-      </form>
-      {logged && (
-        <Redirect
-          to={{
-            pathname: "/myyjälle",
-            state: { seller: user.nimi },
-          }}
-        />
-      )}
-    </>
+    <form onSubmit={handleSubmit} className="loginForm">
+      <div>
+        <label for="exampleEmail">Email address </label>
+        <input
+          type="email"
+          id="exampleEmail"
+          placeholder="email"
+          name="email"
+        ></input>
+      </div>
+      <div>
+        <label for="examplePw">Password </label>
+        <input
+          type="password"
+          id="examplePw"
+          placeholder="password"
+          name="password"
+        ></input>
+      </div>
+      <button type="submit">Login!</button>
+    </form>
   );
 };
 
