@@ -12,3 +12,4 @@
 - npm install --save redux-thunk
 - npm install react-bootstrap bootstrap
 - npm install react-router-bootstrap
+- npm i bcryptjs
