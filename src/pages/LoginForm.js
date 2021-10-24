@@ -48,7 +48,11 @@ const LoginForm = () => {
         <label for="examplePw">Salasana </label>
         <input type="password" placeholder="salasana" name="password"></input>
       </div>
-      <button type="submit">Login!</button>
+      <button type="submit">KIRJAUDU</button>
+      <p>
+        Etkö ole vielä jäsen? Rekisteröidy täällä:{" "}
+        <a href="http://localhost:3000/uusiMyyj%C3%A4">Luo tili</a>
+      </p>
     </form>
   );
 };
