@@ -44,11 +44,11 @@ const AddSeller = () => {
     setPasswordCheck({ ...passwordCheck, [e.target.name]: e.target.value });
   };
 
-  const submitData = (e) => {
+  const submitData = async (e) => {
     e.preventDefault();
     console.log(data);
-    console.log(passwordCheck);
     if (passwordCheck.passwordCheck === data.password) {
+      data.password = await bcrypt.hash(data.password, 12);
       axios
         .post("https://artisaanz.herokuapp.com/seller/add", data)
         .then(setPopOverTitle("Artesaani lisätty"))

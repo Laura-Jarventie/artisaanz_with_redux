@@ -1,22 +1,36 @@
 import React from "react";
-import axios from "axios";
+import { useSelector } from "react-redux";
 import bcrypt from "bcryptjs";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
-  const handleSubmit = async (e) => {
+  const makersList = useSelector((state) => state.makers);
+  const handleSubmit = (e) => {
     e.preventDefault();
     let email = e.target.email.value;
     let password = e.target.password.value;
     console.log("Email: " + email + " and password: " + password);
 
-    let hashedPassword = await bcrypt.hash(password, 12);
-    console.log("Hashed pw: " + hashedPassword);
+    makersList.forEach((maker) => {
+      if (maker.email === email) {
+        console.log(`Found you, ${maker.nimi}!`);
+        bcrypt.compare(password, maker.password).then((result) => {
+          console.log("It's the same password: " + result);
+        });
+        return;
+      } else {
+        console.log(
+          "That's not me, my email (if any) is " + maker.email + " 🤔"
+        );
+      }
+    });
+
     // password = "virheellinenSalasana";
 
     // To compare input against hashed password in db after getting it with axios call by username:
-    bcrypt.compare(password, hashedPassword).then((result) => {
-      console.log("It's the same password: " + result);
-    });
+    // bcrypt.compare(password, hashedPassword).then((result) => {
+    //   console.log("It's the same password: " + result);
+    // });
 
     /***** TO CHECK CREDENTIALS: *****/
 
@@ -50,8 +64,8 @@ const LoginForm = () => {
       </div>
       <button type="submit">KIRJAUDU</button>
       <p>
-        Etkö ole vielä jäsen? Rekisteröidy täällä:{" "}
-        <a href="http://localhost:3000/register">Luo tili</a>
+        Etkö ole vielä jäsen? Rekisteröidy
+        <Link to="/register"> täällä </Link>
       </p>
     </form>
   );
