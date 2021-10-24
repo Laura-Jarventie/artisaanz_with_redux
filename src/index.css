@@ -14,4 +14,16 @@ code {
 
 .loginForm {
   margin: 200px;
+  width: 40%;
+}
+.login-element {
+  background-color: #f2d1b36c;
+  margin: 5px;
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+.login-element input {
+  padding: 2px;
+  border-radius: 0px;
 }

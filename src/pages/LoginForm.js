@@ -36,7 +36,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="loginForm">
-      <div>
+      <div className="login-element">
         <label for="exampleEmail">Sähköposti </label>
         <input
           type="email"
@@ -44,14 +44,14 @@ const LoginForm = () => {
           name="email"
         ></input>
       </div>
-      <div>
+      <div className="login-element">
         <label for="examplePw">Salasana </label>
         <input type="password" placeholder="salasana" name="password"></input>
       </div>
       <button type="submit">KIRJAUDU</button>
       <p>
         Etkö ole vielä jäsen? Rekisteröidy täällä:{" "}
-        <a href="http://localhost:3000/uusiMyyj%C3%A4">Luo tili</a>
+        <a href="http://localhost:3000/register">Luo tili</a>
       </p>
     </form>
   );

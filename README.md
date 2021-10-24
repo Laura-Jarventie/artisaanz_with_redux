@@ -2,14 +2,6 @@
 
 ## Setup
 
-### Run npm install or:
+### Run npm install and:
 
-- npm install react-router-dom
-- npm install axios
-- npm install redux
-- npm install react-redux
-- npm install redux-devtools-extension
-- npm install --save redux-thunk
-- npm install react-bootstrap bootstrap
-- npm install react-router-bootstrap
-- npm i bcryptjs
+- npm i react-router-dom axios redux react-redux redux-devtools-extension redux-thunk react-bootstrap bootstrap react-router-bootstrap bcryptjs
