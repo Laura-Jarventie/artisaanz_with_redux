@@ -60,3 +60,12 @@ export const makerName = (makerName) => {
     });
   };
 };
+
+export const searchProduct = (nimi) => {
+  return async (dispatch) => {
+    dispatch({
+      type: SEARCH_PRODUCT,
+      data: nimi,
+    });
+  };
+};
