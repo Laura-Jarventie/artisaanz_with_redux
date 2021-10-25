@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import bcrypt from "bcryptjs";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 const LoginForm = () => {
   const makersList = useSelector((state) => state.makers);
@@ -17,7 +18,7 @@ const LoginForm = () => {
         bcrypt.compare(password, maker.password).then((result) => {
           console.log("It's the same password: " + result);
         });
-        return;
+        <Redirect push to="/myyjälle" />;
       } else {
         console.log(
           "That's not me, my email (if any) is " + maker.email + " 🤔"
