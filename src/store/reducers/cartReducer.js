@@ -19,10 +19,10 @@ const cartReducer = (state = [], action) => {
         updatedCart = [...state];
   
         updatedItemIndex = updatedCart.findIndex(
-          (item) => item.id === action.payload.id
+          (item) => item.id === action.payload
         );
           updatedCart.splice(updatedItemIndex, 1);
-        console.log(updatedCart);
+        console.log(updatedItemIndex);
         return updatedCart;
 
     default:
