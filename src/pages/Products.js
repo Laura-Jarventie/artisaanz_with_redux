@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import ProductCard from "../Containers/ProductCard";
 import ProductSingle from "./ProductSingle";
 import "../Containers/Products.css";
 import SearchBox from "../Containers/SearchBox";
 import SearchBoxDropdown from "../Containers/SearchboxDropdown";
-import { searchProduct } from "../store/actions/actions";
+// import { searchProduct } from "../store/actions/actions";
 import { useHistory } from "react-router-dom";
 
 const Products = () => {
-  const [tuote, setTuote] = useState([]);
-  const dispatch = useDispatch();
+  // const [tuote, setTuote] = useState([]);
+  // const dispatch = useDispatch();
   const productList = useSelector((state) => state.products);
-  const [loading, setLoading] = useState(false);
-  const nimi = useSelector((state) => state.nimi);
+  // const [loading, setLoading] = useState(false);
+  // const nimi = useSelector((state) => state.nimi);
   const [searchInput, setSearchInput] = useState("");
   const [seller, setSeller] = useState();
 
   const history = useHistory();
   let dropdownShow = "";
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (history.location.state) {
       setSeller(history.location.state.seller);
     }
-  }); */
+  }, [history.location.state]);
 
-  const productFilter = tuote.reverse().filter((tuote) => {
+  const productFilter = productList.reverse().filter((tuote) => {
     if (seller) {
       return (
         tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
@@ -56,7 +56,7 @@ const Products = () => {
     setSeller(false);
   };
 
-  const filteredProducts = productList.map((tuote) => {
+  const filteredProducts = productFilter.map((tuote) => {
     return (
       <div key={tuote.id}>
         <ProductCard
@@ -71,9 +71,9 @@ const Products = () => {
       </div>
     );
   });
-  if (!seller) {
+  
     dropdownShow = <SearchBoxDropdown search={searchValueHandler} />;
-  }
+  
 
   return (
     <main id="products">

@@ -27,8 +27,8 @@ const Makers = () => {
             <Link
               to={{
                 pathname: "/tuotteet",
+                state: { seller: maker.nimi },
               }}
-              onClick={() => dispatch(makerName(maker.nimi))}
             >
               Artesaanin tuotteet
             </Link>
@@ -54,8 +54,8 @@ const Makers = () => {
             <Link
               to={{
                 pathname: "/tuotteet",
+                state: { seller: maker.nimi },
               }}
-              onClick={() => dispatch(makerName(maker.nimi))}
             >
               Artesaanin tuotteet
             </Link>
