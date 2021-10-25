@@ -9,8 +9,9 @@ const cartReducer = (state = [], action) => {
       return action.data;
     case actionTypes.ADD_TO_CART:
       updatedCart = [...state];
+      console.log(action.data);
       updatedCart.push({
-        ...action.payload,
+        ...action.data,
       });
       return updatedCart;
 

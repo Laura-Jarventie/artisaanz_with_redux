@@ -23,8 +23,8 @@ export const getCart = async () => {
 };
 
 export const sendToCart = async (product) => {
-  const response = await axios.post(baseUrl + "/cart/add", product);
-  return response.data;
+  await axios.post(baseUrl + "/cart/add", product);
+  return product;
 };
 
 export const removeFromCart = async (id) => {
