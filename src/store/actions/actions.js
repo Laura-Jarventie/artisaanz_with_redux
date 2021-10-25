@@ -57,10 +57,9 @@ export const addToCart = (product) => {
 export const remove = (id) => {
   return async (dispatch) => {
     await removeFromCart(id);
-    const cart = await getCart();
     dispatch({
       type: REMOVE_FROM_CART,
-      payload: cart,
+      payload: id,
     });
   };
 };
