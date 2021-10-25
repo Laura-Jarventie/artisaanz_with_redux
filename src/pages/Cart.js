@@ -11,7 +11,7 @@ const Cart = () => {
         <CartCard
           id={tuote.id}
           key={tuote.id}
-          kuva={tuote.kuva}
+          kuva={tuote.kuva[0].kuva}
           nimi={tuote.nimi} 
           hinta={tuote.hinta}
           removeBtn={"Poista"}

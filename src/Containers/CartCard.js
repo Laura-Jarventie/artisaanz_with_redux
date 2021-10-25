@@ -8,7 +8,7 @@ const CartCard = ({ nimi, kuva, hinta, removeBtn }) => {
     <div className="cartCard">
       <div className="product-image">
         <img
-          src={kuva[0].kuva}
+          src={kuva}
           alt="tuotteen kuva"
           height="350px"
           width="250px"

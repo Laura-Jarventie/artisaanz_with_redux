@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
+const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria, buyBtn }) => {
   return (
     <div className="productCard">
       <Link to={`/tuotteet/${id}`}>
@@ -16,6 +16,7 @@ const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
         <div className="product-bottom-details">
           <div className="product-price">{hinta} €</div>
         </div>
+        {buyBtn}
       </div>
     </div>
   );
