@@ -7,8 +7,8 @@ import {
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
 export const INIT_MAKERS = "INIT_MAKERS";
-export const SELECT_MAKER = "SELECT_MAKER";
-export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
+// export const SELECT_MAKER = "SELECT_MAKER";
+// export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
 export const INIT_CART = "INIT_CART";
 export const ADD_TO_CART = "ADD_TO_CART";
 
@@ -52,20 +52,20 @@ export const addToCart = (product) => {
   };
 };
 
-export const makerName = (makerName) => {
-  return (dispatch) => {
-    dispatch({
-      type: SELECT_MAKER,
-      data: makerName,
-    });
-  };
-};
+// export const makerName = (makerName) => {
+//   return (dispatch) => {
+//     dispatch({
+//       type: SELECT_MAKER,
+//       data: makerName,
+//     });
+//   };
+// };
 
-export const searchProduct = (nimi) => {
-  return async (dispatch) => {
-    dispatch({
-      type: SEARCH_PRODUCT,
-      data: nimi,
-    });
-  };
-};
+// export const searchProduct = (nimi) => {
+//   return async (dispatch) => {
+//     dispatch({
+//       type: SEARCH_PRODUCT,
+//       data: nimi,
+//     });
+//   };
+// };
