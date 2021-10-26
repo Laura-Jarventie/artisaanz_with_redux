@@ -7,6 +7,7 @@ import Cart from "../pages/Cart";
 import Login from "../pages/LoginForm";
 import AddSeller from "../pages/AddSeller";
 import About from "../pages/About";
+import Preview from "../pages/Preview";
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
         <Route path="/ostoskori" component={Cart} />
         <Route path="/kirjaudu" component={Login} />
         <Route path="/register" component={AddSeller} />
+        <Route path="/kassalle" component={Preview} />
       </Switch>
     </main>
   );

@@ -11,6 +11,7 @@ import {
 import Main from "./Containers/Main";
 import Header from "./Containers/Header";
 import Footer from "./Components/Footer";
+import Preview from "./pages/Preview";
 
 function App() {
   const dispatch = useDispatch();
