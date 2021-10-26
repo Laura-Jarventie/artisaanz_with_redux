@@ -154,7 +154,10 @@ const AddProductForUser = () => {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label htmlFor="">VÄLIAIKANEN myyjä:</Form.Label>
+            <Form.Label htmlFor="">
+              VÄLIAIKANEN laita tähän artesaanin nimi kenelle tuote
+              rekisteröidään:
+            </Form.Label>
             <Form.Control
               as="textarea"
               rows={1}
