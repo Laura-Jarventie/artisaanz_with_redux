@@ -18,7 +18,8 @@ const LoginForm = () => {
         bcrypt.compare(password, maker.password).then((result) => {
           console.log("It's the same password: " + result);
         });
-        <Redirect push to="/myyjälle" />;
+        //<Redirect push to="/myyjälle" />;
+        <Link to="/myyjälle"></Link>;
       } else {
         console.log(
           "That's not me, my email (if any) is " + maker.email + " 🤔"

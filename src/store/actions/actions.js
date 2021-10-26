@@ -4,6 +4,7 @@ import {
   getCart,
   sendToCart,
   removeFromCart,
+  addProductForUser,
 } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
@@ -13,6 +14,7 @@ export const INIT_MAKERS = "INIT_MAKERS";
 export const INIT_CART = "INIT_CART";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const ADD_PRODUCT_FOR_USER = "ADD_PRODUCT_FOR_USER";
 
 export const initializeProducts = () => {
   return async (dispatch) => {
@@ -61,6 +63,16 @@ export const remove = (id) => {
     dispatch({
       type: REMOVE_FROM_CART,
       payload: id,
+    });
+  };
+};
+
+export const addProduct = (product) => {
+  return async (dispatch) => {
+    const products = await addProductForUser();
+    dispatch({
+      type: ADD_PRODUCT_FOR_USER,
+      data: products,
     });
   };
 };

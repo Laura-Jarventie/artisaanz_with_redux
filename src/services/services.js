@@ -31,3 +31,8 @@ export const removeFromCart = async (id) => {
   const response = await axios.delete(baseUrl + "/cart/remove/" + id);
   return response.data;
 };
+
+export const addProductForUser = async (id) => {
+  const response = await axios.get(baseUrl + "/product/add/" + id);
+  return response.data;
+};
