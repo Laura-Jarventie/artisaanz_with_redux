@@ -8,7 +8,7 @@ const CartCard = ({ nimi, kuva, hinta, removeBtn }) => {
     <div className="cartCard">
       <div className="product-image">
         <img
-          src={kuva[0].kuva}
+          src={kuva}
           alt="tuotteen kuva"
           height="350px"
           width="250px"
@@ -18,9 +18,7 @@ const CartCard = ({ nimi, kuva, hinta, removeBtn }) => {
         <div className="product-text">
           <h1>{nimi}</h1>
           <p>{hinta} €</p>
-          <button className="removeBtn" onClick={() => console.log("poista korista")}>
             {removeBtn}
-          </button>
         </div>
       </div>
     </div>

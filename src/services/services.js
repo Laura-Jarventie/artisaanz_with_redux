@@ -23,6 +23,11 @@ export const getCart = async () => {
 };
 
 export const sendToCart = async (product) => {
-  const response = await axios.post(baseUrl + "/cart/add", product);
+  await axios.post(baseUrl + "/cart/add", product);
+  return product;
+};
+
+export const removeFromCart = async (id) => {
+  const response = await axios.delete(baseUrl + "/cart/remove/" + id);
   return response.data;
 };

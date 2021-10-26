@@ -3,6 +3,7 @@ import {
   getMakers,
   getCart,
   sendToCart,
+  removeFromCart
 } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
@@ -11,6 +12,7 @@ export const INIT_MAKERS = "INIT_MAKERS";
 // export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
 export const INIT_CART = "INIT_CART";
 export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 export const initializeProducts = () => {
   return async (dispatch) => {
@@ -48,6 +50,16 @@ export const addToCart = (product) => {
     dispatch({
       type: ADD_TO_CART,
       data: cart,
+    });
+  };
+};
+
+export const remove = (id) => {
+  return async (dispatch) => {
+    await removeFromCart(id);
+    dispatch({
+      type: REMOVE_FROM_CART,
+      payload: id,
     });
   };
 };

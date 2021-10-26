@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import ProductCard from "../Containers/ProductCard";
 import ProductSingle from "./ProductSingle";
@@ -8,10 +8,11 @@ import SearchBox from "../Containers/SearchBox";
 import SearchBoxDropdown from "../Containers/SearchboxDropdown";
 // import { searchProduct } from "../store/actions/actions";
 import { useHistory } from "react-router-dom";
+import { addToCart } from "../store/actions/actions";
 
 const Products = () => {
   // const [tuote, setTuote] = useState([]);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const productList = useSelector((state) => state.products);
   // const [loading, setLoading] = useState(false);
   // const nimi = useSelector((state) => state.nimi);
@@ -67,6 +68,7 @@ const Products = () => {
           artesaani={tuote.artesaani}
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
+          buyBtn={<button onClick={() => dispatch(addToCart(tuote))}>Osta</button>}
         />
       </div>
     );
