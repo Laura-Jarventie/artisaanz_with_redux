@@ -3,7 +3,7 @@ import {
   getMakers,
   getCart,
   sendToCart,
-  removeFromCart
+  removeFromCart,
 } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
@@ -55,6 +55,7 @@ export const addToCart = (product) => {
 };
 
 export const remove = (id) => {
+  console.log(id);
   return async (dispatch) => {
     await removeFromCart(id);
     dispatch({

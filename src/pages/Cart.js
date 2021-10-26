@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import { remove } from "../store/actions/actions";
+import { initializeCart } from "../store/actions/actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initializeCart());
+  }, [dispatch]);
+
   const cartList = useSelector((state) => state.cart);
 
   const cartItems = cartList.map((tuote) => {
@@ -14,9 +20,16 @@ const Cart = () => {
           id={tuote.id}
           key={tuote.id}
           kuva={tuote.kuva[0].kuva}
-          nimi={tuote.nimi} 
+          nimi={tuote.nimi}
           hinta={tuote.hinta}
-          removeBtn={<button className="removeBtn" onClick={() => dispatch(remove(tuote.id))}>Poista</button>}
+          removeBtn={
+            <button
+              className="removeBtn"
+              onClick={() => dispatch(remove(tuote.id))}
+            >
+              Poista
+            </button>
+          }
         />
       </div>
     );
