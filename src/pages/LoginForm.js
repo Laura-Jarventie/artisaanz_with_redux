@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import bcrypt from "bcryptjs";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
 
 const LoginForm = () => {
+  const history = useHistory();
+  const [maker, setMaker] = useState();
+  const [logged, setLogged] = useState();
   const makersList = useSelector((state) => state.makers);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,8 +21,13 @@ const LoginForm = () => {
         bcrypt.compare(password, maker.password).then((result) => {
           console.log("It's the same password: " + result);
         });
-        //<Redirect push to="/myyjälle" />;
-        <Link to="/myyjälle"></Link>;
+
+        setMaker(maker);
+        setLogged(true);
+        console.log(logged);
+
+        <Redirect to="/myyjälle" />;
+        //<Link to="/myyjälle"></Link>;
       } else {
         console.log(
           "That's not me, my email (if any) is " + maker.email + " 🤔"
@@ -51,25 +59,36 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="loginForm">
-      <div className="login-element">
-        <label for="exampleEmail">Sähköposti </label>
-        <input
-          type="email"
-          placeholder="nimi@esimerkki.com"
-          name="email"
-        ></input>
-      </div>
-      <div className="login-element">
-        <label for="examplePw">Salasana </label>
-        <input type="password" placeholder="salasana" name="password"></input>
-      </div>
-      <button type="submit">KIRJAUDU</button>
-      <p>
-        Etkö ole vielä jäsen? Rekisteröidy
-        <Link to="/register"> täällä </Link>
-      </p>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="loginForm">
+        <div className="login-element">
+          <label for="exampleEmail">Sähköposti </label>
+          <input
+            type="email"
+            placeholder="nimi@esimerkki.com"
+            name="email"
+          ></input>
+        </div>
+        <div className="login-element">
+          <label for="examplePw">Salasana </label>
+          <input type="password" placeholder="salasana" name="password"></input>
+        </div>
+        <button type="submit">KIRJAUDU</button>
+
+        <p>
+          Etkö ole vielä jäsen? Rekisteröidy
+          <Link to="/register"> täällä </Link>
+        </p>
+      </form>
+      {logged && (
+        <Redirect
+          to={{
+            pathname: "/myyjälle",
+            state: { maker: maker.nimi },
+          }}
+        />
+      )}
+    </>
   );
 };
 
