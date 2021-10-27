@@ -48,14 +48,8 @@ const Navigation = () => {
         <li>
           <Link to="/ostoskori"> Ostoskori ({count})</Link>
         </li>
-        {/* <li>
-          <Link to="/uusiMyyjä"> Rekisteröidy </Link>
-        </li> */}
         <li>
           <Link to="/kirjaudu"> Kirjaudu</Link>
-        </li>
-        <li>
-          <Link to="myyjälle"> Väliaikanen-myyjälle</Link>
         </li>
       </ul>
     </nav>
