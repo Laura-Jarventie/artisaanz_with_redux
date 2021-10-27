@@ -53,7 +53,8 @@ const Navigation = () => {
               <FaShoppingCart className="fat-icon" />
             ) : (
               <FaShoppingCart className="icon" />
-            )}
+            )}{" "}
+            {count > 0 ? `(${count})` : ""}
           </Link>
         </li>
         <li>
