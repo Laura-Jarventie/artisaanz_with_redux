@@ -47,15 +47,15 @@ const Navigation = () => {
           <Link to="/meistä"> Meistä</Link>
         </li>
         <li>
-          <Link to="/ostoskori">
-            {" "}
-            {count > 0 ? (
-              <FaShoppingCart className="fat-icon" />
-            ) : (
-              <FaShoppingCart className="icon" />
-            )}{" "}
-            {count > 0 ? `(${count})` : ""}
-          </Link>
+          {count > 0 ? (
+            <Link to="/ostoskori" className="fat-icon">
+              <FaShoppingCart />({count})
+            </Link>
+          ) : (
+            <Link to="/ostoskori" className="icon">
+              <FaShoppingCart />
+            </Link>
+          )}
         </li>
         <li>
           <Link to="/kirjaudu"> Kirjaudu</Link>
