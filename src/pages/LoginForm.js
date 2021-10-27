@@ -4,6 +4,8 @@ import bcrypt from "bcryptjs";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 
+import "../Containers/LoginForm.css";
+
 const LoginForm = () => {
   const makersList = useSelector((state) => state.makers);
   const handleSubmit = (e) => {
@@ -64,10 +66,12 @@ const LoginForm = () => {
         <label for="examplePw">Salasana </label>
         <input type="password" placeholder="salasana" name="password"></input>
       </div>
-      <button type="submit">KIRJAUDU</button>
+      <button className="loginBtn" type="submit">
+        KIRJAUDU
+      </button>
       <p>
         Etkö ole vielä jäsen? Rekisteröidy
-        <Link to="/register"> täällä </Link>
+        <Link to="/register"> TÄÄLLÄ </Link>
       </p>
     </form>
   );

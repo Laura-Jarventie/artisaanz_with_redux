@@ -9,38 +9,34 @@ const About = () => {
   return (
     <>
       <div className="welcometxt">
-        <h1>Hi, we hope you have enjoyed our page!</h1>
+        <h1>Hei! Toivottavasti piditte sivustamme!</h1>
 
         <p>
-          We (Laura, Akseli, Emilia and Salla) are group of class mates in
-          Helsinki Business College and in one year we will be full stack web
-          developers. Idea for this web platform came from the real life: Whole
-          world has been sitting in home the past year, and so have we in
-          Finland also done. Some of us have been trying to pick up new hobbies,
-          or refreshen old skills. We started to think that all of us know
-          someone who is making awesome handcrafts. Some artisans hoping to
-          support themselves with their products, some are doing them just for
-          fun. No matter what the reason is, all of the handcrafts are made with
-          love. You can be sure you'll receive an unique product each time you
-          support a artisan by ordering through our page.
+          Me(Laura, Akseli, Emilia ja Salla) ollaan luokkakavereita Helsinki
+          Business Collegessa ja valmistumme toukokuussa 2022 Full Stack Web
+          Developereiksi. Idea tähän projektiin tulee oikeasta elämästä: Koko
+          maailma on istunut kotona viimeisen puolentoista vuoden ajan, ja
+          useimmat meistä on tässä ajassa löytäneet uusia harrastuksia,
+          kokeilleet uusia asioita, tai hioneet vanhoja taitojaan, kuten
+          käsitöitä. Se sai meidät miettimään, että jokainen meistä tuntee
+          jonkun, joka tekee tälläkin hetkellä upeita käsitöitä: jotkut ihan
+          vain huvin vuoksi, ja jotkut saadakseen hieman lisä elantoa. Syystä
+          huolimatta, kaikki käsityöt ovat tehty rakkaudella. Tämä sivu on tehty
+          heille, ja voimme taata, että tukemalla artesaaneja ja tilaamalla
+          sivumme kautta saat vastineeksi ainutlaatuisen, käsintehdyn tuotteen.
         </p>
         <p>
-          This platform is also our summer project for school. We have used
-          React.js and for visual side we used React Bootstrap framework and own
-          styling with CSS. Backend is build with PHP and Symfony and hosted at
-          Heroku.com.
-        </p>
-        <p>
-          Next phase for this platform is putting our artisans behind
-          registeration, so that only correct person has access for modifying
-          and adding or deleting products. Also we will build actual shopping
-          cart.{" "}
+          Tämä sivu on meidän vuoden 2021 kouluprojekti. Käytimme React.js:ia,
+          Reduxia ja visuaalisella puolella käytimme CSS:a ja React Bootstrap
+          Frameworkia. Backend on rakennettu PHP:ta, Symfonya, ja Node.js:ia
+          käyttäen, ja hostattu Heroku.com:ssa.
         </p>
         <p>
           <div className="bold">
-            Until then, if you find some handcraft you fell in love and want to
-            purchase it, feel free to contact us with below contact form so we
-            will connect you with the artisan.{" "}
+            Olemme matkalla julkaisemaan sivua kaikkien käyttöön, mutta vielä
+            löytyy hiottavaa. Siihen asti, jos näet käsityön, johon rakastuit
+            ensisilmäyksellä ja haluat sen ostaa, voit olla yhteydessä meihin
+            alla olevan lomakkeen kautta. Yhdistämme teidät oikeaan artesaaniin.{" "}
           </div>
         </p>
       </div>
@@ -53,7 +49,7 @@ const About = () => {
           id="form"
         >
           <Form.Group>
-            <Form.Label htmlFor="">Your email:</Form.Label>
+            <Form.Label htmlFor="">Sähköposti:</Form.Label>
             <Form.Control
               type="email"
               width="10px"
@@ -64,7 +60,7 @@ const About = () => {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label htmlFor="">Subject:</Form.Label>
+            <Form.Label htmlFor="">Aihe:</Form.Label>
             <Form.Control
               width="10px"
               type="text"
@@ -75,7 +71,7 @@ const About = () => {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label htmlFor="">Message:</Form.Label>
+            <Form.Label htmlFor="">Viesti:</Form.Label>
             <Form.Control
               as="textarea"
               rows={6}
@@ -85,7 +81,7 @@ const About = () => {
               required
             />
             <Button type="submit" className="addbtn" value="Send data">
-              Send mail
+              Lähetä viesti
             </Button>
           </Form.Group>
         </Form>
