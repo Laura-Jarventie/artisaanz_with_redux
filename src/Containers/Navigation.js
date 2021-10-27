@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navigation = () => {
   const cart = useSelector((state) => state.cart);
@@ -46,11 +47,15 @@ const Navigation = () => {
           <Link to="/meistä"> Meistä</Link>
         </li>
         <li>
-          <Link to="/ostoskori"> Ostoskori ({count})</Link>
+          <Link to="/ostoskori">
+            {" "}
+            {count > 0 ? (
+              <FaShoppingCart className="fat-icon" />
+            ) : (
+              <FaShoppingCart className="icon" />
+            )}
+          </Link>
         </li>
-        {/* <li>
-          <Link to="/uusiMyyjä"> Rekisteröidy </Link>
-        </li> */}
         <li>
           <Link to="/kirjaudu"> Kirjaudu</Link>
         </li>

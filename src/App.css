@@ -111,6 +111,34 @@ input {
   text-decoration: none;
   background-color: #583a22;
 }
+.icon {
+  font-size: 2rem;
+  display: block;
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+}
+.icon:hover {
+  font-weight: 600;
+  transform: scale(1.5);
+}
+
+.fat-icon {
+  font-size: 3rem;
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+  color: red;
+  animation-name: addFirst;
+  animation-duration: 1s;
+}
+.fat-icon:hover {
+  font-weight: 900;
+  transform: scale(1.5);
+}
+@keyframes addFirst {
+  50% {
+    font-size: 5rem;
+  }
+}
 
 /*******login page****/
 .hidden {
