@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import { Link } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
+import "../Containers/CartCard.css";
 
 const Cart = () => {
+  const [product, setProduct] = useState({
+    name: "React from fb",
+    price: 10,
+    productBy: "facebook",
+  });
+  let cartItems = [];
+
+  const makePayment = (token) => {
+    const body = {
+      token,
+      product,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    return fetch(`http://localhost:4000/maksu`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        console.log("RESPONSE ", response);
+        const { status } = response;
+        console.log("STATUS ", status);
+      })
+      .catch((error) => console.log(error));
+  };
+
   const maksa = () => {
     fetch("http://localhost:3001/create-checkout-session", {
       method: "POST",
@@ -14,12 +44,6 @@ const Cart = () => {
         items: [
           { id: 1, quantity: 1 },
           { id: 2, quantity: 1 },
-          { id: 3, quantity: 1 },
-          { id: 4, quantity: 1 },
-          { id: 5, quantity: 1 },
-          { id: 6, quantity: 1 },
-          { id: 7, quantity: 1 },
-          { id: 8, quantity: 1 },
         ],
       }),
     })
@@ -35,7 +59,7 @@ const Cart = () => {
 
   const cartList = useSelector((state) => state.cart);
 
-  const cartItems = cartList.map((tuote) => {
+  cartItems = cartList.map((tuote) => {
     return (
       <div className="cart" key={tuote.id}>
         <CartCard
@@ -61,6 +85,16 @@ const Cart = () => {
         Herokuun maksamaan tästä!{" "}
       </a>
       <button onClick={() => maksa()}>Maksa nodella</button>
+      <StripeCheckout
+        stripeKey={process.env.REACT_APP_KEY}
+        token={makePayment}
+        name="Buy a product"
+        amount={product.price * 100}
+        shippingAddress
+        billingAddress
+      >
+        <button className="removeBtn">Maksamaan</button>
+      </StripeCheckout>
     </main>
   );
 };
