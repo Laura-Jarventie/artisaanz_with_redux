@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCardForUser from "./ProductCardForUser";
 import SearchBox from "../Containers/SearchBox";
-//import ProductSingleForAdmin from "../pages/ProductSingleForAdmin";
+import ProductSingleForMaker from "../pages/ProductSingleForMaker";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Containers/Products.css";
@@ -65,9 +65,9 @@ const UserProducts = () => {
       <h2>Tuotteesi:</h2>
       <div id="products">
         <Switch>
-          {/* <Route path="/munTuotteet/:id">
-          <ProductSingleForAdmin />
-        </Route> */}
+          <Route path="/munTuotteet/:id">
+            <ProductSingleForMaker />
+          </Route>
           <Route path="/:munTuotteet" exact>
             {/* <SearchBox search={searchValueHandler} /> */}
             <div className="filteredProducts">{filteredProducts}</div>
