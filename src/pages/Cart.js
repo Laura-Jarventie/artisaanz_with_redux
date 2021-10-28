@@ -8,6 +8,7 @@ import "../Containers/Cart.css";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  let totalPrice = 0;
 
   useEffect(() => {
     dispatch(initializeCart());
@@ -16,6 +17,7 @@ const Cart = () => {
   const cartList = useSelector((state) => state.cart);
 
   const cartItems = cartList.map((tuote) => {
+    totalPrice += tuote.hinta;
     return (
       <div className="cart" key={tuote.id}>
         <CartCard
@@ -41,7 +43,7 @@ const Cart = () => {
     <main id="cart">
       <h1 className="heading">Ostoskori</h1>
       <div className="cartItems">{cartItems}</div>
-      <h2 className="heading">Yhteensä €</h2>
+      <h2 className="heading">Yhteensä {totalPrice} €</h2>
       <button className="cartBtn">Kassalle</button>
     </main>
   );
