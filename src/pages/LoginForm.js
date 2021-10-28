@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import bcrypt from "bcryptjs";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
 
 import "../Containers/LoginForm.css";
 
 const LoginForm = () => {
+  const history = useHistory();
+  const [maker, setMaker] = useState();
+  const [logged, setLogged] = useState();
   const makersList = useSelector((state) => state.makers);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,8 +23,13 @@ const LoginForm = () => {
         bcrypt.compare(password, maker.password).then((result) => {
           console.log("It's the same password: " + result);
         });
-        //<Redirect push to="/myyjälle" />;
-        <Link to="/myyjälle"></Link>;
+
+        setMaker(maker);
+        setLogged(true);
+        console.log(logged);
+
+        <Redirect to="/myyjälle" />;
+        //<Link to="/myyjälle"></Link>;
       } else {
         console.log(
           "That's not me, my email (if any) is " + maker.email + " 🤔"

@@ -9,6 +9,9 @@ import AddSeller from "../pages/AddSeller";
 import About from "../pages/About";
 import User from "../pages/User";
 
+import AddProductForUser from "../pages/AddProductForUser";
+import UserProducts from "./UserProducts";
+
 const Main = () => {
   return (
     <main>
@@ -22,6 +25,8 @@ const Main = () => {
         <Route path="/kirjaudu" component={Login} />
         <Route path="/register" component={AddSeller} />
         <Route path="/myyjälle" component={User} />
+        <Route path="/munTuotteet" component={UserProducts} />
+        <Route path="/lisäätuote" component={AddProductForUser} />
       </Switch>
     </main>
   );

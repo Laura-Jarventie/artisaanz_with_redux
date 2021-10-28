@@ -13,7 +13,7 @@ import { addProduct } from "../store/actions/actions";
 import "../App.css";
 
 const AddProductForUser = () => {
-  const [seller, setSeller] = useState();
+  const [maker, setMaker] = useState();
   const history = useHistory();
   const [showPopOver, setShowPopOver] = useState(false);
   const [popOverTitle, setPopOverTitle] = useState();
@@ -26,10 +26,11 @@ const AddProductForUser = () => {
 
   useEffect(() => {
     if (history.location.state) {
-      setSeller(history.location.state.seller);
+      setMaker(history.location.state.maker);
     }
   });
 
+  console.log("uusi" + maker);
   const [data, setData] = useState({
     kuva: [],
     nimi: "",
@@ -37,6 +38,7 @@ const AddProductForUser = () => {
     hinta: "",
     artesaani: "",
   });
+
   const [kuvat, setKuvat] = useState([{ id: 1 }]);
 
   const changeData = (e) => {
@@ -58,7 +60,7 @@ const AddProductForUser = () => {
   };
   const submitData = (e) => {
     e.preventDefault();
-    // data.artesaani = seller;
+    //data.artesaani = maker;
     axios
       .post("https://artisaanz.herokuapp.com/product/add", data)
       .then(setPopOverTitle("Tuote lisätty"))
@@ -163,7 +165,7 @@ const AddProductForUser = () => {
               rows={1}
               type="text"
               name="artesaani"
-              required
+              // required
               onChange={changeData}
             />
           </Form.Group>
