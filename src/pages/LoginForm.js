@@ -61,27 +61,38 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="loginForm">
-      <div className="login-element">
-        <label for="exampleEmail">Sähköposti </label>
-        <input
-          type="email"
-          placeholder="nimi@esimerkki.com"
-          name="email"
-        ></input>
-      </div>
-      <div className="login-element">
-        <label for="examplePw">Salasana </label>
-        <input type="password" placeholder="salasana" name="password"></input>
-      </div>
-      <button className="loginBtn" type="submit">
-        KIRJAUDU
-      </button>
-      <p>
-        Etkö ole vielä jäsen? Rekisteröidy
-        <Link to="/register"> TÄÄLLÄ </Link>
-      </p>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="loginForm">
+        <div className="login-element">
+          <label for="exampleEmail">Sähköposti </label>
+          <input
+            type="email"
+            placeholder="nimi@esimerkki.com"
+            name="email"
+          ></input>
+        </div>
+        <div className="login-element">
+          <label for="examplePw">Salasana </label>
+          <input type="password" placeholder="salasana" name="password"></input>
+        </div>
+        <button className="loginBtn" type="submit">
+          KIRJAUDU
+        </button>
+        <p>
+          Etkö ole vielä jäsen? Rekisteröidy
+          <Link to="/register"> TÄÄLLÄ </Link>
+        </p>
+      </form>
+      {logged && (
+        <Redirect
+          to={{
+            pathname: "/myyjälle",
+
+            state: { maker: maker.nimi },
+          }}
+        />
+      )}
+    </>
   );
 };
 
