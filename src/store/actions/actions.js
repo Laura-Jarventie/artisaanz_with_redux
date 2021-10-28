@@ -5,6 +5,8 @@ import {
   sendToCart,
   removeFromCart,
   addProductForUser,
+  sendToProducts,
+  removeFromProducts
 } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
@@ -15,6 +17,8 @@ export const INIT_CART = "INIT_CART";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const ADD_PRODUCT_FOR_USER = "ADD_PRODUCT_FOR_USER";
+export const ADD_PRODUCT_FROM_CART = "ADD_PRODUCT_FROM_CART";
+export const REMOVE_FROM_PRODUCTS = "REMOVE_FROM_PRODUCTS";
 
 export const initializeProducts = () => {
   return async (dispatch) => {
@@ -53,16 +57,25 @@ export const addToCart = (product) => {
       type: ADD_TO_CART,
       data: cart,
     });
+    await removeFromProducts(product.id);
+    dispatch({
+      type: REMOVE_FROM_PRODUCTS,
+      payload: product.id,
+    });
   };
 };
 
-export const remove = (id) => {
-  console.log(id);
+export const remove = (tuote) => {
   return async (dispatch) => {
-    await removeFromCart(id);
+    const products = await sendToProducts(tuote);
+    dispatch({
+      type: ADD_PRODUCT_FROM_CART,
+      data: products,
+    });
+    await removeFromCart(tuote.id);
     dispatch({
       type: REMOVE_FROM_CART,
-      payload: id,
+      payload: tuote.id,
     });
   };
 };
@@ -76,6 +89,17 @@ export const addProduct = (product) => {
     });
   };
 };
+
+// export const restoreProduct = (product) => {
+//   console.log("restore product");
+//   return async (dispatch) => {
+//     const products = await sendToProducts(product);
+//     dispatch({
+//       type: ADD_PRODUCT_FROM_CART,
+//       data: products,
+//     });
+//   };
+// };
 
 // export const makerName = (makerName) => {
 //   return (dispatch) => {

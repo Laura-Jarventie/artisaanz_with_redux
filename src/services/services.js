@@ -36,3 +36,13 @@ export const addProductForUser = async (id) => {
   const response = await axios.get(baseUrl + "/product/add/" + id);
   return response.data;
 };
+
+export const sendToProducts = async (product) => {
+  await axios.post(baseUrl + "/product/add", product);
+  return product;
+};
+
+export const removeFromProducts = async (id) => {
+  const response = await axios.delete(baseUrl + "/product/remove/" + id);
+  return response.data;
+};

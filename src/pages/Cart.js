@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
-import { remove } from "../store/actions/actions";
+import { remove, restoreProduct } from "../store/actions/actions";
 import { initializeCart } from "../store/actions/actions";
 
 const Cart = () => {
@@ -27,7 +27,7 @@ const Cart = () => {
           removeBtn={
             <button
               className="removeBtn"
-              onClick={() => dispatch(remove(tuote.id))}
+              onClick={() => dispatch(remove(tuote))}
             >
               Poista
             </button>

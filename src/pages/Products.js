@@ -8,7 +8,7 @@ import SearchBox from "../Containers/SearchBox";
 import SearchBoxDropdown from "../Containers/SearchboxDropdown";
 // import { searchProduct } from "../store/actions/actions";
 import { useHistory } from "react-router-dom";
-import { addToCart } from "../store/actions/actions";
+import { addToCart, initializeProducts } from "../store/actions/actions";
 
 const Products = () => {
   // const [tuote, setTuote] = useState([]);
@@ -22,7 +22,11 @@ const Products = () => {
   const history = useHistory();
   let dropdownShow = "";
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   dispatch(initializeProducts());
+  // }, [dispatch])
+
+  useEffect (() => {
     if (history.location.state) {
       setSeller(history.location.state.seller);
     }
