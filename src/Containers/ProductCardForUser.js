@@ -20,6 +20,7 @@ const ProductCardForUser = ({
       <p>Artesaani: {artesaani} </p>
       <p>Hinta: {hinta} €</p>
       <p>Kategoria: {kategoria}</p>
+      <button>Muokkaa</button>
     </div>
   );
 };
