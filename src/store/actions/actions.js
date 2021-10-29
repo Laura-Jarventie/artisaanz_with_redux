@@ -67,15 +67,16 @@ export const addToCart = (product) => {
 
 export const remove = (tuote) => {
   return async (dispatch) => {
-    const products = await sendToProducts(tuote);
-    dispatch({
-      type: ADD_PRODUCT_FROM_CART,
-      data: products,
-    });
+
     await removeFromCart(tuote.id);
     dispatch({
       type: REMOVE_FROM_CART,
       payload: tuote.id,
+    });
+    const products = await sendToProducts(tuote);
+    dispatch({
+      type: ADD_PRODUCT_FROM_CART,
+      data: products,
     });
   };
 };
