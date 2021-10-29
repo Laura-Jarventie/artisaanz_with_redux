@@ -4,6 +4,8 @@ import CartCard from "../Containers/CartCard";
 import { remove, restoreProduct } from "../store/actions/actions";
 import { initializeCart } from "../store/actions/actions";
 
+import "../Containers/Cart.css";
+
 const Cart = () => {
   const dispatch = useDispatch();
   let totalPrice = 0;
@@ -39,10 +41,10 @@ const Cart = () => {
 
   return (
     <main id="cart">
-      <h1>Ostoskori</h1>
+      <h1 className="heading">Ostoskori</h1>
       <div className="cartItems">{cartItems}</div>
-      <h2>Yhteensä {totalPrice} €</h2>
-      <button>Kassalle</button>
+      <h2 className="heading">Yhteensä {totalPrice} €</h2>
+      <button className="cartBtn">Kassalle</button>
     </main>
   );
 };

@@ -72,14 +72,17 @@ const Products = () => {
           artesaani={tuote.artesaani}
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
-          buyBtn={<button onClick={() => dispatch(addToCart(tuote))}>Osta</button>}
+          buyBtn={
+            <button id="buyBtn" onClick={() => dispatch(addToCart(tuote))}>
+              Osta
+            </button>
+          }
         />
       </div>
     );
   });
-  
-    dropdownShow = <SearchBoxDropdown search={searchValueHandler} />;
-  
+
+  dropdownShow = <SearchBoxDropdown search={searchValueHandler} />;
 
   return (
     <main id="products">

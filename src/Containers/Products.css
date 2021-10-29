@@ -65,21 +65,49 @@
   grid-gap: 3rem;
 }
 
-#artisanbtn {
-  height: 45px;
-  width: 300px;
-  background-color: #583a22;
-  outline: 5px solid #583a22;
-  border: 3px solid #fff;
-  color: #fff;
+#buyBtn {
+  position: relative;
+  margin-top: 20px;
+  height: 40px;
+  width: 200px;
+  border: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  display: block;
+  border-radius: 15px;
+  background: #0a1943;
+  color: white;
+  font-size: 14px;
+  text-align: center;
   font-family: "EB Garamond", serif;
-  margin: 20px;
-  font-size: 1.2rem;
+}
+
+#artisanbtn {
+  position: relative;
+  height: 40px;
+  width: 100px;
+  border: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  display: block;
+  border-radius: 15px;
+  background: #0a1943;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: "EB Garamond", serif;
 }
 
 .btn-primary:hover {
   transform: scale(1.1);
-  background-color: #a8611f;
 }
 
 @media (max-width: 899px) {
@@ -91,52 +119,70 @@
   }
 }
 .btn-secondary {
-  height: 35px;
-  width: 150px;
-  background-color: #583a22;
-  outline: 5px solid #583a22;
-  border: 3px solid #fff;
-  color: #fff;
+  position: relative;
+  height: 40px;
+  width: 200px;
+  border: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  display: block;
+  border-radius: 15px;
+  background: #0a1943;
+  color: white;
+  font-size: 14px;
+  text-align: center;
   font-family: "EB Garamond", serif;
-  margin: 20px 0 20px 0;
-  font-size: 1.2rem;
-  margin-right: 2rem;
 }
 .btn-check:active + .btn-secondary,
 .btn-check:checked + .btn-secondary,
 .btn-secondary.active,
 .btn-secondary:active,
 .show > .btn-secondary.dropdown-toggle {
-  color: #583a22;
-  background-color: #fff;
-  border-color: #fff;
-}
-.btn-secondary:hover {
-  color: #583a22;
-  background-color: #fff;
-  border-color: #fff;
+  position: relative;
+  height: 40px;
+  width: 200px;
+  border: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  display: block;
+  border-radius: 15px;
+  background: #0a1943;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: "EB Garamond", serif;
 }
 
 .btn-primary {
-  height: 45px;
+  position: relative;
+  height: 40px;
   width: 200px;
-  background-color: #583a22;
-  outline: 5px solid #583a22;
-  border: 3px solid #fff;
-  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  display: block;
+  border-radius: 15px;
+  background: #0a1943;
+  color: white;
+  font-size: 14px;
+  text-align: center;
   font-family: "EB Garamond", serif;
-  margin: 20px 0 20px 0;
-  font-size: 1.2rem;
 }
 
 .btn-primary:hover {
   transform: scale(1.1);
-  background-color: #583a22;
-  border: 3px solid #fff;
-}
-
-.btn-primary:active {
-  background-color: #583a22;
 }
 
 .btn-check:active + .btn-primary,
@@ -144,15 +190,27 @@
 .btn-primary.active,
 .btn-primary:active,
 .show > .btn-primary.dropdown-toggle {
-  background-color: #583a22;
-  box-shadow: 0 0 0 0.25rem (#333);
-  border-color: #fff;
+  position: relative;
+  height: 40px;
+  width: 200px;
+  border: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  display: block;
+  border-radius: 15px;
+  background: #0a1943;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: "EB Garamond", serif;
 }
 .btn-check:focus + .btn-primary,
 .btn-primary:focus {
-  background-color: #583a22;
   box-shadow: 0 0 0 0.25rem (#333);
-  border-color: #fff;
 }
 .btn-check:active + .btn-primary:focus,
 .btn-check:checked + .btn-primary:focus,

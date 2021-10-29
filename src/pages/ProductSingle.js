@@ -26,7 +26,9 @@ const ProductSingle = () => {
   const Popup = () => {
     return (
       <div className="popup">
-        <button onClick={close}>Sulje</button>
+        <button className="popupBtn" onClick={close}>
+          Sulje
+        </button>
         <img src={popupImg} onClick={close} alt="iso tuotekuva" />
       </div>
     );
@@ -84,15 +86,14 @@ const ProductSingle = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button
-          className="buyBtn"
-          onClick={() => dispatch(addToCart(tuotteet))}
-        >
-          Osta
-        </button>
-        <button id="backbtn" onClick={() => history.goBack()}>
-          Takaisin
-        </button>
+        <div className="buttons">
+          <button id="buyBtn" onClick={() => dispatch(addToCart(tuotteet))}>
+            Osta
+          </button>
+          <button id="backBtn" onClick={() => history.goBack()}>
+            Takaisin
+          </button>
+        </div>
       </div>
     );
   }
