@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import { Link } from "react-router-dom";
@@ -6,18 +6,36 @@ import StripeCheckout from "react-stripe-checkout";
 import "../Containers/CartCard.css";
 
 const Cart = () => {
+  const tavara = { name: "jotain", price: 2 };
   const [product, setProduct] = useState({
-    name: "React from fb",
-    price: 10,
-    productBy: "facebook",
+    name: "Empty :(",
+    price: 666,
+    productBy: "ArtisaanZ",
   });
+  let totalPrice = 0;
+  let itemNames = "";
+
+  const jotain = useSelector((state) => state.cart);
+
+  jotain.forEach((element) => {
+    totalPrice = totalPrice + element.hinta;
+    itemNames = itemNames + element.nimi + ", ";
+  });
+
+  console.log(
+    "totalprice from react: " + totalPrice + "€ and item names: " + itemNames
+  );
+  tavara.price = totalPrice;
+  tavara.name = itemNames;
+
   let cartItems = [];
 
   const makePayment = (token) => {
     const body = {
       token,
-      product,
+      tavara,
     };
+    console.log(body.tavara);
     const headers = {
       "Content-Type": "application/json",
     };
@@ -33,6 +51,27 @@ const Cart = () => {
       })
       .catch((error) => console.log(error));
   };
+  // const makePayment = (token) => {
+  //   const body = {
+  //     token,
+  //     product,
+  //   };
+  //   console.log(body.product);
+  //   const headers = {
+  //     "Content-Type": "application/json",
+  //   };
+  //   return fetch(`http://localhost:4000/maksu`, {
+  //     method: "POST",
+  //     headers,
+  //     body: JSON.stringify(body),
+  //   })
+  //     .then((response) => {
+  //       console.log("RESPONSE ", response);
+  //       const { status } = response;
+  //       console.log("STATUS ", status);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
 
   const maksa = () => {
     fetch("http://localhost:3001/create-checkout-session", {
@@ -41,10 +80,7 @@ const Cart = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        items: [
-          { id: 1, quantity: 1 },
-          { id: 2, quantity: 1 },
-        ],
+        items: [{ id: 1, quantity: 1 }],
       }),
     })
       .then((res) => {
@@ -85,11 +121,12 @@ const Cart = () => {
         Herokuun maksamaan tästä!{" "}
       </a>
       <button onClick={() => maksa()}>Maksa nodella</button>
+
       <StripeCheckout
         stripeKey={process.env.REACT_APP_KEY}
         token={makePayment}
-        name="Buy a product"
-        amount={product.price * 100}
+        name={itemNames}
+        amount={totalPrice * 100}
         shippingAddress
         billingAddress
       >

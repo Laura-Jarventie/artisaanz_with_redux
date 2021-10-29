@@ -17,35 +17,12 @@ const LoginForm = () => {
         bcrypt.compare(password, maker.password).then((result) => {
           console.log("It's the same password: " + result);
         });
-        return;
       } else {
         console.log(
           "That's not me, my email (if any) is " + maker.email + " 🤔"
         );
       }
     });
-
-    // password = "virheellinenSalasana";
-
-    // To compare input against hashed password in db after getting it with axios call by username:
-    // bcrypt.compare(password, hashedPassword).then((result) => {
-    //   console.log("It's the same password: " + result);
-    // });
-
-    /***** TO CHECK CREDENTIALS: *****/
-
-    // axios
-    //   .post("https://127.0.0.1:8000/login", {
-    //     email: email,
-    //     password: password,
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.response.data);
-    //     alert("Invalid credentials!");
-    //   });
   };
 
   return (
