@@ -26,7 +26,9 @@ const AddProductForUser = () => {
 
   useEffect(() => {
     if (history.location.state) {
-      setMaker(history.location.state.maker);
+      setMaker(history.location.state.maker.nimi);
+    } else {
+      console.log(maker);
     }
   });
 
@@ -36,7 +38,7 @@ const AddProductForUser = () => {
     nimi: "",
     kuvaus: "",
     hinta: "",
-    artesaani: "",
+    artesaani: maker,
   });
 
   const [kuvat, setKuvat] = useState([{ id: 1 }]);
