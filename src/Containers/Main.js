@@ -8,6 +8,8 @@ import Login from "../pages/LoginForm";
 import AddSeller from "../pages/AddSeller";
 import About from "../pages/About";
 import User from "../pages/User";
+import SuccesfulPayment from "../pages/SuccesfulPayment";
+import FailedPayment from "../pages/FailedPayment";
 
 import AddProductForUser from "../pages/AddProductForUser";
 import UserProducts from "./UserProducts";
@@ -27,6 +29,8 @@ const Main = () => {
         <Route path="/myyjälle" component={User} />
         <Route path="/munTuotteet" component={UserProducts} />
         <Route path="/lisäätuote" component={AddProductForUser} />
+        <Route path="/onnistui" component={SuccesfulPayment} />
+        <Route path="/epäonnistui" component={FailedPayment} />
       </Switch>
     </main>
   );
