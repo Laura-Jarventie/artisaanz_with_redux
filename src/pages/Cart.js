@@ -9,7 +9,7 @@ const Cart = () => {
   const tavara = { name: "jotain", price: 2 };
   const [product, setProduct] = useState({
     name: "Empty :(",
-    price: 666,
+    price: 1,
     productBy: "ArtisaanZ",
   });
   let totalPrice = 0;
@@ -39,7 +39,7 @@ const Cart = () => {
     const headers = {
       "Content-Type": "application/json",
     };
-    return fetch(`http://localhost:4000/maksu`, {
+    return fetch(`https://stripe-payment-artisaanz.herokuapp.com/maksu`, {
       method: "POST",
       headers,
       body: JSON.stringify(body),
