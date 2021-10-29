@@ -20,7 +20,14 @@ const User = () => {
       <UserProducts />
       <h2>
         Lisää tuotteita:
-        <Link to="/lisäätuote"> täältä </Link>
+        <Link
+          to={{
+            pathname: "/lisäätuote",
+
+            state: { maker: maker },
+          }}
+        >
+         täältä </Link>
       </h2>
     </>
   );

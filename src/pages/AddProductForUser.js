@@ -26,13 +26,12 @@ const AddProductForUser = () => {
 
   useEffect(() => {
     if (history.location.state) {
-      setMaker(history.location.state.maker.nimi);
+      setMaker(history.location.state.maker);
     } else {
       console.log(maker);
     }
   });
 
-  console.log("uusi" + maker);
   const [data, setData] = useState({
     kuva: [],
     nimi: "",
@@ -62,7 +61,7 @@ const AddProductForUser = () => {
   };
   const submitData = (e) => {
     e.preventDefault();
-    //data.artesaani = maker;
+    data.artesaani = maker;
     axios
       .post("https://artisaanz.herokuapp.com/product/add", data)
       .then(setPopOverTitle("Tuote lisätty"))
@@ -157,7 +156,7 @@ const AddProductForUser = () => {
               onChange={changeData}
             />
           </Form.Group>
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label htmlFor="">
               VÄLIAIKANEN laita tähän artesaanin nimi kenelle tuote
               rekisteröidään:
@@ -170,7 +169,7 @@ const AddProductForUser = () => {
               // required
               onChange={changeData}
             />
-          </Form.Group>
+          </Form.Group> */}
           <Button
             type="submit"
             className="addbtn"
@@ -179,9 +178,9 @@ const AddProductForUser = () => {
           >
             Lisää tuote
           </Button>
-          <button onClick={() => dispatch(addProduct())}>
+          {/* <button onClick={() => dispatch(addProduct())}>
             Tämä nappi toimii
-          </button>
+          </button> */}
           <Overlay target={target.current} placement="right" show={showPopOver}>
             {popover}
           </Overlay>
