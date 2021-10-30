@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
-const ProductCardForUser = ({
+const ProductCardForMaker = ({
   id,
   nimi,
   kuva,
@@ -27,4 +27,4 @@ const ProductCardForUser = ({
   );
 };
 
-export default ProductCardForUser;
+export default ProductCardForMaker;

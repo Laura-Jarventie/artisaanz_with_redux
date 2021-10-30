@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProductCardForUser from "./ProductCardForUser";
+import ProductCardForMaker from "./ProductCardForMaker";
 
 import ProductSingleForMaker from "../pages/ProductSingleForMaker";
 import { Switch, Route } from "react-router-dom";
@@ -47,7 +47,7 @@ const MakersProducts = () => {
   const filteredProducts = productFilter.reverse().map((tuote) => {
     return (
       <div key={tuote.id}>
-        <ProductCardForUser
+        <ProductCardForMaker
           id={tuote.id}
           key={tuote.id}
           kuva={tuote.kuva}
