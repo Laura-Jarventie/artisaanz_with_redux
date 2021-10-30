@@ -2,9 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import StripeCheckout from "react-stripe-checkout";
-import { remove } from "../store/actions/actions";
-import { initializeCart } from "../store/actions/actions";
-
 import "../Containers/CartCard.css";
 import { initializeCart, remove } from "../store/actions/actions";
 
