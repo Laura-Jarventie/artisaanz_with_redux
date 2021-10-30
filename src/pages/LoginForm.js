@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import bcrypt from "bcryptjs";
 import { Link, useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
 
 import "../Containers/LoginForm.css";
+import { changeLogin } from "../store/actions/actions";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const [maker, setMaker] = useState();
   const [logged, setLogged] = useState();
@@ -52,7 +54,7 @@ const LoginForm = () => {
           <label htmlFor="examplePw">Salasana </label>
           <input type="password" placeholder="salasana" name="password"></input>
         </div>
-        <button className="loginBtn" type="submit">
+        <button className="loginBtn" type="submit" onClick={() => dispatch(changeLogin())}>
           KIRJAUDU
         </button>
         <p>
