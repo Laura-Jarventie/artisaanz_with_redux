@@ -23,3 +23,40 @@ a {
   color: #a8611f;
   font-weight: 800;
 }
+
+.loginForm {
+  margin: 200px;
+  width: 40%;
+}
+.login-element {
+  margin: 5px;
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+.login-element input {
+  padding: 2px;
+}
+.login-element label {
+  border-radius: 5px;
+}
+
+@media (max-width: 899px) {
+  .loginForm {
+    margin: 100px 300px;
+    width: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginForm {
+    margin: 100px 20px;
+    width: 40%;
+  }
+  .login-element {
+    margin: 20px;
+  }
+  .login-element input {
+    margin: 10px;
+  }
+}

@@ -3,9 +3,17 @@ import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import { Link } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
+import { remove } from "../store/actions/actions";
+import { initializeCart } from "../store/actions/actions";
+
 import "../Containers/CartCard.css";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initializeCart());
+  }, [dispatch]);
   const tavara = { name: "jotain", price: 2 };
   const [product, setProduct] = useState({
     name: "Empty :(",
@@ -95,33 +103,33 @@ const Cart = () => {
 
   const cartList = useSelector((state) => state.cart);
 
-  // cartItems = cartList.map((tuote) => {
-  //   return (
-  //     <div className="cart" key={tuote.id}>
-  //       <CartCard
-  //         id={tuote.id}
-  //         key={tuote.id}
-  //         kuva={tuote.kuva}
-  //         nimi={tuote.nimi}
-  //         hinta={tuote.hinta}
-  //         removeBtn={
-  //           <button
-  //             className="removeBtn"
-  //             onClick={() => dispatch(remove(tuote))}
-  //           >
-  //             Poista
-  //           </button>
-  //         }
-  //       />
-  //     </div>
-  //   );
-  // });
+  cartItems = cartList.map((tuote) => {
+    return (
+      <div className="cart" key={tuote.id}>
+        <CartCard
+          id={tuote.id}
+          key={tuote.id}
+          kuva={tuote.kuva[0].kuva}
+          nimi={tuote.nimi}
+          hinta={tuote.hinta}
+          removeBtn={
+            <button
+              className="removeBtn"
+              onClick={() => dispatch(remove(tuote))}
+            >
+              Poista
+            </button>
+          }
+        />
+      </div>
+    );
+  });
 
   return (
     <main id="cart">
       <h1 className="heading">Ostoskori</h1>
       <div className="cartItems">{cartItems}</div>
-      <h2>Yhteensä €</h2>
+      <h2>Yhteensä {totalPrice}€</h2>
       {/* <Link to="/kassalle"> Maksamaan mars! </Link> */}
       <a href="https://artisaanz.herokuapp.com/checkout">
         {" "}

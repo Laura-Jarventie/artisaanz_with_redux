@@ -231,7 +231,6 @@
 
 @media (max-width: 899px) {
   .productCard {
-    max-height: 450px;
     width: 400px;
     margin-left: 170px;
     padding: 1rem;
@@ -253,7 +252,6 @@
 
 @media (max-width: 576px) {
   .productCard {
-    max-height: 400px;
     width: 250px;
     margin: 20px 35px;
     padding: 1rem;
