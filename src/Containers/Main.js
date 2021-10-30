@@ -5,14 +5,14 @@ import Products from "../pages/Products";
 import Makers from "../pages/Makers";
 import Cart from "../pages/Cart";
 import Login from "../pages/LoginForm";
-import AddSeller from "../pages/AddSeller";
+import AddMaker from "../pages/AddMaker";
 import About from "../pages/About";
-import User from "../pages/User";
+import Maker from "../pages/Maker";
 import SuccesfulPayment from "../pages/SuccesfulPayment";
 import FailedPayment from "../pages/FailedPayment";
 import EditProduct from "../pages/EditProduct";
-import AddProductForUser from "../pages/AddProductForUser";
-import UserProducts from "./UserProducts";
+import AddProductForMaker from "../pages/AddProductForMaker";
+import MakersProducts from "./MakersProducts";
 
 const Main = () => {
   return (
@@ -25,11 +25,11 @@ const Main = () => {
         <Route path="/meistä" component={About} />
         <Route path="/ostoskori" component={Cart} />
         <Route path="/kirjaudu" component={Login} />
-        <Route path="/register" component={AddSeller} />
-        <Route path="/myyjälle" component={User} />
-        <Route path="/munTuotteet" component={UserProducts} />
+        <Route path="/register" component={AddMaker} />
+        <Route path="/myyjälle" component={Maker} />
+        <Route path="/munTuotteet" component={MakersProducts} />
         <Route path="/muokkaa/:id" component={EditProduct} />
-        <Route path="/lisäätuote" component={AddProductForUser} />
+        <Route path="/lisäätuote" component={AddProductForMaker} />
         <Route path="/onnistui" component={SuccesfulPayment} />
         <Route path="/epäonnistui" component={FailedPayment} />
       </Switch>

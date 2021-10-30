@@ -8,7 +8,7 @@ import "../Containers/Products.css";
 import Spinner from "react-bootstrap/Spinner";
 import { useHistory } from "react-router-dom";
 
-const UserProducts = () => {
+const MakersProducts = () => {
   const [tuote, setTuote] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -84,4 +84,4 @@ const UserProducts = () => {
   );
 };
 
-export default UserProducts;
+export default MakersProducts;

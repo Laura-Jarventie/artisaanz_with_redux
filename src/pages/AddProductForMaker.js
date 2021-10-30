@@ -7,10 +7,11 @@ import Col from "react-bootstrap/Col";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router";
 
 import "../App.css";
 
-const AddProductForUser = () => {
+const AddProductForMaker = () => {
   const [maker, setMaker] = useState();
   const history = useHistory();
   const [showPopOver, setShowPopOver] = useState(false);
@@ -20,7 +21,8 @@ const AddProductForUser = () => {
   const errorMessage =
     "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.";
   const target = useRef(null);
-
+  /* event.preventDefault(); EI LÖYDY OIKEAA PAIKKAA
+  <Redirect to="/myyjälle" />;*/
   useEffect(() => {
     if (history.location.state) {
       setMaker(history.location.state.maker);
@@ -153,13 +155,17 @@ const AddProductForUser = () => {
               onChange={changeData}
             />
           </Form.Group>
-
           <Button
             type="submit"
             className="addbtn"
             value="Send data"
             ref={target}
           >
+            {/* <Redirect
+              to={{
+                pathname: "/myyjälle",
+              }}
+            /> */}
             Lisää tuote
           </Button>
 
@@ -175,4 +181,4 @@ const AddProductForUser = () => {
   );
 };
 
-export default AddProductForUser;
+export default AddProductForMaker;

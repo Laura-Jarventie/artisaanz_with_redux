@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import UserProducts from "../Containers/UserProducts";
+import MakersProducts from "../Containers/MakersProducts";
 
-const User = () => {
+const Maker = () => {
   const history = useHistory();
   const [maker, setMaker] = useState();
 
@@ -30,9 +30,9 @@ const User = () => {
           täältä{" "}
         </Link>
       </h2>
-      <UserProducts />
+      <MakersProducts />
     </>
   );
 };
 
-export default User;
+export default Maker;
