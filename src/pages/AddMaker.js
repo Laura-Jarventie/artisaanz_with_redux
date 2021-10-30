@@ -6,14 +6,11 @@ import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import bcrypt from "bcryptjs";
 
-const AddSeller = () => {
+const AddMaker = () => {
   const [data, setData] = useState({
     nimi: "",
     esittely: "",
-    // tuotteet: [],
-    // tuotteita: "",
     email: "",
-    // username: "",
     password: "",
     passwordCheck: "",
   });
@@ -27,18 +24,9 @@ const AddSeller = () => {
   const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
 
-  // const [tuotteet, setTuotteet] = useState([]);
-
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
-
-  // const changeTuotteetData = (e) => {
-  //   setTuotteet([e.target.value]);
-  //   console.log(tuotteet);
-  //   setData({ ...data, tuotteet });
-  //   console.log(data);
-  // };
 
   const changePassWordCheck = (e) => {
     setPasswordCheck({ ...passwordCheck, [e.target.name]: e.target.value });
@@ -91,36 +79,7 @@ const AddSeller = () => {
           />
         </Form.Group>
 
-        {/* <Form.Group>
-          <Form.Label>Tuoteryhmät</Form.Label>
-          <Row>
-            <select
-              multiple={true}
-              name="tuotteet"
-              onChange={changeTuotteetData}
-              required
-            >
-              <option value="Pussukat">Pussukat</option>
-              <option value="Laukut">Laukut</option>
-              <option value="Leivonnaiset">Leivonnaiset</option>
-              <option value="Villasukat">Villasukat</option>
-              <option value="Korut">Korut</option>
-              <option value="Sisustus">Sisustus</option>
-              <option value="Kalastus">Kalastus</option>
-              <option value="Muu">Muu</option>
-            </select>
-          </Row>
-        </Form.Group> */}
-
         <Form.Group>
-          {/* <Form.Label>Käyttäjätunnus:</Form.Label>
-          <Form.Control
-            type="text"
-            width="10px"
-            name="username"
-            required
-            onChange={changeData}
-          /> */}
           <Form.Label>Sähköpostiosoite:</Form.Label>
           <Form.Control
             type="email"
@@ -168,4 +127,4 @@ const AddSeller = () => {
   );
 };
 
-export default AddSeller;
+export default AddMaker;

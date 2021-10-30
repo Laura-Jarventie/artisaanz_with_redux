@@ -7,12 +7,11 @@ import Col from "react-bootstrap/Col";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addProduct } from "../store/actions/actions";
+import { Redirect } from "react-router";
 
 import "../App.css";
 
-const AddProductForUser = () => {
+const AddProductForMaker = () => {
   const [maker, setMaker] = useState();
   const history = useHistory();
   const [showPopOver, setShowPopOver] = useState(false);
@@ -22,17 +21,16 @@ const AddProductForUser = () => {
   const errorMessage =
     "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.";
   const target = useRef(null);
-  const dispatch = useDispatch();
-
+  /* event.preventDefault(); EI LÖYDY OIKEAA PAIKKAA
+  <Redirect to="/myyjälle" />;*/
   useEffect(() => {
     if (history.location.state) {
-      setMaker(history.location.state.maker.nimi);
+      setMaker(history.location.state.maker);
     } else {
       console.log(maker);
     }
   });
 
-  console.log("uusi" + maker);
   const [data, setData] = useState({
     kuva: [],
     nimi: "",
@@ -62,7 +60,7 @@ const AddProductForUser = () => {
   };
   const submitData = (e) => {
     e.preventDefault();
-    //data.artesaani = maker;
+    data.artesaani = maker;
     axios
       .post("https://artisaanz.herokuapp.com/product/add", data)
       .then(setPopOverTitle("Tuote lisätty"))
@@ -157,38 +155,30 @@ const AddProductForUser = () => {
               onChange={changeData}
             />
           </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="">
-              VÄLIAIKANEN laita tähän artesaanin nimi kenelle tuote
-              rekisteröidään:
-            </Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={1}
-              type="text"
-              name="artesaani"
-              // required
-              onChange={changeData}
-            />
-          </Form.Group>
           <Button
             type="submit"
             className="addbtn"
             value="Send data"
             ref={target}
           >
+            {/* <Redirect
+              to={{
+                pathname: "/myyjälle",
+              }}
+            /> */}
             Lisää tuote
           </Button>
-          <button onClick={() => dispatch(addProduct())}>
-            Tämä nappi toimii
-          </button>
-          <Overlay target={target.current} placement="right" show={showPopOver}>
+
+          <Overlay target={target.current} placement="left" show={showPopOver}>
             {popover}
           </Overlay>
+          <button className="addbtn" onClick={() => history.goBack()}>
+            Takaisin kaikkiin tuotteisiin
+          </button>
         </Form>
       </div>
     </>
   );
 };
 
-export default AddProductForUser;
+export default AddProductForMaker;

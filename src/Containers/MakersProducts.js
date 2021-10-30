@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ProductCardForUser from "./ProductCardForUser";
-import SearchBox from "../Containers/SearchBox";
+import ProductCardForMaker from "./ProductCardForMaker";
+
 import ProductSingleForMaker from "../pages/ProductSingleForMaker";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +8,7 @@ import "../Containers/Products.css";
 import Spinner from "react-bootstrap/Spinner";
 import { useHistory } from "react-router-dom";
 
-const UserProducts = () => {
+const MakersProducts = () => {
   const [tuote, setTuote] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -47,7 +47,7 @@ const UserProducts = () => {
   const filteredProducts = productFilter.reverse().map((tuote) => {
     return (
       <div key={tuote.id}>
-        <ProductCardForUser
+        <ProductCardForMaker
           id={tuote.id}
           key={tuote.id}
           kuva={tuote.kuva}
@@ -69,15 +69,14 @@ const UserProducts = () => {
             <ProductSingleForMaker />
           </Route>
           <Route path="/:munTuotteet" exact>
-            {/* <SearchBox search={searchValueHandler} /> */}
             <div className="filteredProducts">{filteredProducts}</div>
-            {/*  {loading === false && (
-                <Spinner
-                  className="productSpinner"
-                  animation="border"
-                  variant="secondary"
-                />
-              )} */}
+            {loading === false && (
+              <Spinner
+                className="productSpinner"
+                animation="border"
+                variant="secondary"
+              />
+            )}
           </Route>
         </Switch>
       </div>
@@ -85,4 +84,4 @@ const UserProducts = () => {
   );
 };
 
-export default UserProducts;
+export default MakersProducts;

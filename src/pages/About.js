@@ -39,6 +39,11 @@ const About = () => {
             alla olevan lomakkeen kautta. Yhdistämme teidät oikeaan artesaaniin.{" "}
           </div>
         </p>
+        <p>Ota meihin yhteyttä:</p>
+        <p>Emilia Vuorenmaa: emivuore@gmail.com</p>
+        <p>Laura Järventie: laurajarventie@hotmail.com</p>
+        <p>Salla Vuorikko: salla.vuorikko@gmail.com</p>
+        <p>Akseli Miettinen: miettinen.akseli@gmail.com</p>
       </div>
 
       <div>

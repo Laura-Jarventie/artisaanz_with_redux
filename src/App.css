@@ -224,8 +224,15 @@ input {
   }
 
   .makers {
+    display: grid;
+    grid-template-columns: repeat(1, 10rem);
+    grid-auto-rows: auto;
+    grid-gap: 0.5rem;
     margin-left: 5px;
-    width: 25rem;
+  }
+
+  .makersCard {
+    width: 250px;
   }
 
   .addbtn {

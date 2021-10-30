@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import StripeCheckout from "react-stripe-checkout";
+import { remove } from "../store/actions/actions";
+import { initializeCart } from "../store/actions/actions";
+
 import "../Containers/CartCard.css";
 import { initializeCart, remove } from "../store/actions/actions";
 
@@ -92,6 +95,12 @@ const Cart = () => {
       <h1 className="heading">Ostoskori</h1>
       <div className="cartItems">{cartItems}</div>
       <h2>Yhteensä {totalPrice}€</h2>
+      {/* <Link to="/kassalle"> Maksamaan mars! </Link> */}
+      <a href="https://artisaanz.herokuapp.com/checkout">
+        {" "}
+        Herokuun maksamaan tästä!{" "}
+      </a>
+      <button onClick={() => maksa()}>Maksa nodella</button>
 
       <StripeCheckout
         stripeKey={process.env.REACT_APP_KEY}
