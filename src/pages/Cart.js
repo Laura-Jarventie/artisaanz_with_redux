@@ -91,13 +91,7 @@ const Cart = () => {
     <main id="cart">
       <h1 className="heading">Ostoskori</h1>
       <div className="cartItems">{cartItems}</div>
-      <h2>Yhteensä {totalPrice}€</h2>
-      {/* <Link to="/kassalle"> Maksamaan mars! </Link> */}
-      <a href="https://artisaanz.herokuapp.com/checkout">
-        {" "}
-        Herokuun maksamaan tästä!{" "}
-      </a>
-      <button onClick={() => maksa()}>Maksa nodella</button>
+      <h2>Yhteensä {totalPrice} €</h2>
 
       <StripeCheckout
         stripeKey={process.env.REACT_APP_KEY}
