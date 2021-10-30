@@ -31,14 +31,14 @@ const About = () => {
           Frameworkia. Backend on rakennettu PHP:ta, Symfonya, ja Node.js:ia
           käyttäen, ja hostattu Heroku.com:ssa.
         </p>
-        <p>
           <div className="bold">
+          <p>
             Olemme matkalla julkaisemaan sivua kaikkien käyttöön, mutta vielä
             löytyy hiottavaa. Siihen asti, jos näet käsityön, johon rakastuit
             ensisilmäyksellä ja haluat sen ostaa, voit olla yhteydessä meihin
             alla olevan lomakkeen kautta. Yhdistämme teidät oikeaan artesaaniin.{" "}
+            </p>
           </div>
-        </p>
         <p>Ota meihin yhteyttä:</p>
         <p>Emilia Vuorenmaa: emivuore@gmail.com</p>
         <p>Laura Järventie: laurajarventie@hotmail.com</p>

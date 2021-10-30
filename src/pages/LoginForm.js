@@ -41,7 +41,7 @@ const LoginForm = () => {
     <>
       <form onSubmit={handleSubmit} className="loginForm">
         <div className="login-element">
-          <label for="exampleEmail">Sähköposti </label>
+          <label htmlFor="exampleEmail">Sähköposti </label>
           <input
             type="email"
             placeholder="nimi@esimerkki.com"
@@ -49,7 +49,7 @@ const LoginForm = () => {
           ></input>
         </div>
         <div className="login-element">
-          <label for="examplePw">Salasana </label>
+          <label htmlFor="examplePw">Salasana </label>
           <input type="password" placeholder="salasana" name="password"></input>
         </div>
         <button className="loginBtn" type="submit">
