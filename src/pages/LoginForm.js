@@ -29,7 +29,6 @@ const LoginForm = () => {
         console.log(logged);
 
         <Redirect to="/myyjälle" />;
-        //<Link to="/myyjälle"></Link>;
       } else {
         console.log(
           "That's not me, my email (if any) is " + maker.email + " 🤔"
@@ -57,7 +56,7 @@ const LoginForm = () => {
           KIRJAUDU
         </button>
         <p>
-          Etkö ole vielä jäsen? Rekisteröidy
+          Etkö ole vielä Artesaani? Rekisteröidy
           <Link to="/register"> TÄÄLLÄ </Link>
         </p>
       </form>

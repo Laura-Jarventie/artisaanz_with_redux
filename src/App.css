@@ -157,6 +157,12 @@ input {
   visibility: visible;
 }
 
+/******Succesful and failed payment*********/
+.afterPayment {
+  text-align: center;
+  margin-top: 10%;
+}
+
 /*********Tablet @media*********/
 @media (max-width: 899px) {
   main {

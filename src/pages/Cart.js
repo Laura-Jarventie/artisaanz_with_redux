@@ -1,38 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
-import { Link } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 import { remove } from "../store/actions/actions";
 import { initializeCart } from "../store/actions/actions";
 
 import "../Containers/CartCard.css";
+import { initializeCart, remove } from "../store/actions/actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(initializeCart());
   }, [dispatch]);
+
   const tavara = { name: "jotain", price: 2 };
-  const [product, setProduct] = useState({
-    name: "Empty :(",
-    price: 1,
-    productBy: "ArtisaanZ",
-  });
+
   let totalPrice = 0;
   let itemNames = "";
 
-  const jotain = useSelector((state) => state.cart);
+  const cartListItems = useSelector((state) => state.cart);
 
-  jotain.forEach((element) => {
+  cartListItems.forEach((element) => {
     totalPrice = totalPrice + element.hinta;
     itemNames = itemNames + element.nimi + ", ";
   });
 
-  console.log(
-    "totalprice from react: " + totalPrice + "€ and item names: " + itemNames
-  );
   tavara.price = totalPrice;
   tavara.name = itemNames;
 
@@ -56,49 +49,21 @@ const Cart = () => {
         console.log("RESPONSE ", response);
         const { status } = response;
         console.log("STATUS ", status);
+        emptyCart();
+        window.location.assign("/onnistui");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        window.location.assign("/epäonnistui");
+      });
   };
-  // const makePayment = (token) => {
-  //   const body = {
-  //     token,
-  //     product,
-  //   };
-  //   console.log(body.product);
-  //   const headers = {
-  //     "Content-Type": "application/json",
-  //   };
-  //   return fetch(`http://localhost:4000/maksu`, {
-  //     method: "POST",
-  //     headers,
-  //     body: JSON.stringify(body),
-  //   })
-  //     .then((response) => {
-  //       console.log("RESPONSE ", response);
-  //       const { status } = response;
-  //       console.log("STATUS ", status);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
 
-  const maksa = () => {
-    fetch("http://localhost:3001/create-checkout-session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        items: [{ id: 1, quantity: 1 }],
-      }),
-    })
-      .then((res) => {
-        if (res.ok) return res.json();
-        return res.json().then((json) => Promise.reject(json));
-      })
-      .then(({ url }) => {
-        window.location = url;
-      })
-      .catch((e) => [console.log(e.error)]);
+  const emptyCart = () => {
+    console.log("Tyhjätääs ostoskori");
+    cartList.forEach((el) => {
+      console.log("Removing " + el.nimi);
+      dispatch(remove(el));
+    });
   };
 
   const cartList = useSelector((state) => state.cart);

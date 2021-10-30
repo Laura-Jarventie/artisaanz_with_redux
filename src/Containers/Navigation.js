@@ -8,29 +8,6 @@ const Navigation = () => {
   const cart = useSelector((state) => state.cart);
   let count = cart.length;
 
-  //   const [user, setUser] = useState([]);
-
-  //   useEffect(() => {
-  //     axios
-  //       .get("https://artisaanz.herokuapp.com/seller/all")
-  //       .then((resp) => setUser(resp.data));
-  //   }, []);
-
-  //   const userList = user.map((user) => {
-  //     return (
-  //       <Dropdown.Item>
-  //         <Link
-  //           to={{
-  //             pathname: "/login",
-  //             state: { seller: user.id },
-  //           }}
-  //         >
-  //           {user.nimi}
-  //         </Link>
-  //       </Dropdown.Item>
-  //     );
-  //   });
-
   return (
     <nav>
       <ul>
