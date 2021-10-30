@@ -107,25 +107,28 @@ const ProductSingleForMaker = () => {
             );
           })}
         <h1>{tuotteet.nimi}</h1>
+
         <p>{tuotteet.kuvaus}</p>
         <p>
-          <Link to={`/artesaanit/${tuotteet.artesaani}`}>
+          {/* <Link to={`/artesaanit/${tuotteet.artesaani}`}>
             Artesaani: {tuotteet.artesaani}
-          </Link>
+          </Link> */}
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button className="adminbtn" onClick={() => history.goBack()}>
-          Takaisin
+
+        <button className="addbtn" onClick={() => history.goBack()}>
+          Takaisin kaikkiin tuotteisiin
         </button>
-        <button className="adminbtn">
-          <Link to={`/muokkaa/${tuotteet.id}`} className="modify">
+        <button className="addbtn">
+          <Link to={`/muokkaa/${tuotteet.id}`} /* className="modify" */>
             Muokkaa
           </Link>
         </button>
-        <button className="adminbtn" ref={target} onClick={handleShowModal}>
+        <button className="addbtn" ref={target} onClick={handleShowModal}>
           Poista tuote
         </button>
+
         <Overlay target={target.current} placement="bottom" show={showPopOver}>
           {popover}
         </Overlay>

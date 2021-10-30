@@ -10,7 +10,7 @@ import About from "../pages/About";
 import User from "../pages/User";
 import SuccesfulPayment from "../pages/SuccesfulPayment";
 import FailedPayment from "../pages/FailedPayment";
-
+import EditProduct from "../pages/EditProduct";
 import AddProductForUser from "../pages/AddProductForUser";
 import UserProducts from "./UserProducts";
 
@@ -28,6 +28,7 @@ const Main = () => {
         <Route path="/register" component={AddSeller} />
         <Route path="/myyjälle" component={User} />
         <Route path="/munTuotteet" component={UserProducts} />
+        <Route path="/muokkaa/:id" component={EditProduct} />
         <Route path="/lisäätuote" component={AddProductForUser} />
         <Route path="/onnistui" component={SuccesfulPayment} />
         <Route path="/epäonnistui" component={FailedPayment} />

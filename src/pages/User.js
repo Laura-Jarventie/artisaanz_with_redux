@@ -17,7 +17,7 @@ const User = () => {
   return (
     <>
       <h1>Tervetuloa käyttäjä {maker}</h1>
-      <UserProducts />
+
       <h2>
         Lisää tuotteita:
         <Link
@@ -27,8 +27,10 @@ const User = () => {
             state: { maker: maker },
           }}
         >
-         täältä </Link>
+          täältä{" "}
+        </Link>
       </h2>
+      <UserProducts />
     </>
   );
 };

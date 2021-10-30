@@ -7,8 +7,6 @@ import Col from "react-bootstrap/Col";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addProduct } from "../store/actions/actions";
 
 import "../App.css";
 
@@ -22,7 +20,6 @@ const AddProductForUser = () => {
   const errorMessage =
     "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.";
   const target = useRef(null);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (history.location.state) {
@@ -156,20 +153,7 @@ const AddProductForUser = () => {
               onChange={changeData}
             />
           </Form.Group>
-          {/* <Form.Group>
-            <Form.Label htmlFor="">
-              VÄLIAIKANEN laita tähän artesaanin nimi kenelle tuote
-              rekisteröidään:
-            </Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={1}
-              type="text"
-              name="artesaani"
-              // required
-              onChange={changeData}
-            />
-          </Form.Group> */}
+
           <Button
             type="submit"
             className="addbtn"
@@ -178,12 +162,13 @@ const AddProductForUser = () => {
           >
             Lisää tuote
           </Button>
-          {/* <button onClick={() => dispatch(addProduct())}>
-            Tämä nappi toimii
-          </button> */}
-          <Overlay target={target.current} placement="right" show={showPopOver}>
+
+          <Overlay target={target.current} placement="left" show={showPopOver}>
             {popover}
           </Overlay>
+          <button className="addbtn" onClick={() => history.goBack()}>
+            Takaisin kaikkiin tuotteisiin
+          </button>
         </Form>
       </div>
     </>

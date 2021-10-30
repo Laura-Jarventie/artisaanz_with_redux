@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCardForUser from "./ProductCardForUser";
-import SearchBox from "../Containers/SearchBox";
+
 import ProductSingleForMaker from "../pages/ProductSingleForMaker";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
@@ -69,15 +69,14 @@ const UserProducts = () => {
             <ProductSingleForMaker />
           </Route>
           <Route path="/:munTuotteet" exact>
-            {/* <SearchBox search={searchValueHandler} /> */}
             <div className="filteredProducts">{filteredProducts}</div>
-            {/*  {loading === false && (
-                <Spinner
-                  className="productSpinner"
-                  animation="border"
-                  variant="secondary"
-                />
-              )} */}
+            {loading === false && (
+              <Spinner
+                className="productSpinner"
+                animation="border"
+                variant="secondary"
+              />
+            )}
           </Route>
         </Switch>
       </div>
