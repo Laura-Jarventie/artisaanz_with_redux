@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import ProductCardForMaker from "./ProductCardForMaker";
 
 import ProductSingleForMaker from "../pages/ProductSingleForMaker";
@@ -7,14 +8,20 @@ import axios from "axios";
 import "../Containers/Products.css";
 import Spinner from "react-bootstrap/Spinner";
 import { useHistory } from "react-router-dom";
+import { initializeProducts } from "../store/actions/actions";
 
 const MakersProducts = () => {
+  const dispatch = useDispatch();
   const [tuote, setTuote] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [maker, setMaker] = useState();
 
   const history = useHistory();
+
+  useEffect(() => {
+    dispatch(initializeProducts());
+  }, [dispatch]);
 
   useEffect(() => {
     if (history.location.state) {

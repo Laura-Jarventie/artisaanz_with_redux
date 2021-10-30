@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "../App.css";
 import { FaShoppingCart } from "react-icons/fa";
+import {initializeLogin} from ".././store/actions/actions";
 
 const Navigation = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   let count = cart.length;
+  const logged = useSelector((state) => state.logged);
+  console.log(logged);
 
   return (
     <nav>
@@ -35,7 +39,7 @@ const Navigation = () => {
           )}
         </li>
         <li>
-          <Link to="/kirjaudu"> Kirjaudu</Link>
+          <Link to="/kirjaudu" onClick={() => dispatch(initializeLogin())}> {logged}</Link>
         </li>
       </ul>
     </nav>
