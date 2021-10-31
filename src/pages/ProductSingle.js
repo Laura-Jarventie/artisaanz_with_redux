@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link, useParams } from "react-router-dom";
 import "../Components/ProductSingle.css";
 import { getSingleProduct } from "../services/services";
-import { addToCart } from "../store/actions/actions";
+import { addToCart, initializeProducts } from "../store/actions/actions";
 
 const ProductSingle = () => {
   const dispatch = useDispatch();
@@ -87,7 +87,7 @@ const ProductSingle = () => {
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
         <div className="buttons">
-          <button id="buyBtn" onClick={() => dispatch(addToCart(tuotteet))}>
+          <button id="buyBtn" onClick={() => {dispatch(addToCart(tuotteet)); setTuotteet("");}}>
             Osta
           </button>
           <button id="backBtn" onClick={() => history.goBack()}>
