@@ -16,16 +16,16 @@ const Cart = () => {
   let totalPrice = 0;
   let itemNames = "";
 
-  const cartListItems = useSelector((state) => state.cart);
+  const cartList = useSelector((state) => state.cart);
 
   useEffect(() => {
-    console.log(cartListItems.length);
-    if (cartListItems.length > 0) {
+    console.log(cartList.length);
+    if (cartList.length > 0) {
       setNoItems(false);
     }
   });
 
-  cartListItems.forEach((element) => {
+  cartList.forEach((element) => {
     totalPrice = totalPrice + element.hinta;
     itemNames = itemNames + element.nimi + ", ";
   });
@@ -70,8 +70,6 @@ const Cart = () => {
     });
   };
 
-  const cartList = useSelector((state) => state.cart);
-
   cartItems = cartList.map((tuote) => {
     return (
       <>
@@ -92,19 +90,6 @@ const Cart = () => {
             }
           />
         </div>
-        <h2>Yhteensä {totalPrice} €</h2>
-
-        <StripeCheckout
-          stripeKey={process.env.REACT_APP_KEY}
-          token={makePayment}
-          name={itemNames}
-          amount={totalPrice * 100}
-          shippingAddress
-          billingAddress
-          currency="eur"
-        >
-          <button className="removeBtn">Maksamaan</button>
-        </StripeCheckout>
       </>
     );
   });
@@ -114,8 +99,26 @@ const Cart = () => {
     <main id="cart">
       <h1 className="heading">Ostoskori</h1>
       <div>
-        {/* <div className="cartItems"> */}
-        {noItems ? <h2>Ostoskorisi on tyhjä</h2> : cartItems}
+        {noItems ? (
+          <h2>Ostoskorisi on tyhjä</h2>
+        ) : (
+          <>
+            {cartItems}
+            <h2>Yhteensä {totalPrice} €</h2>
+
+            <StripeCheckout
+              stripeKey={process.env.REACT_APP_KEY}
+              token={makePayment}
+              name={itemNames}
+              amount={totalPrice * 100}
+              shippingAddress
+              billingAddress
+              currency="eur"
+            >
+              <button className="removeBtn">Maksamaan</button>
+            </StripeCheckout>
+          </>
+        )}
       </div>
     </main>
   );
