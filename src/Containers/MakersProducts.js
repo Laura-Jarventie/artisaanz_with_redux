@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ProductCardForMaker from "./ProductCardForMaker";
-
 import ProductSingleForMaker from "../pages/ProductSingleForMaker";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";

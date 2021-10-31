@@ -22,9 +22,9 @@ const Products = () => {
   const history = useHistory();
   let dropdownShow = "";
 
-  // useEffect(() => {
-  //   dispatch(initializeProducts());
-  // }, [dispatch])
+  useEffect(() => {
+    dispatch(initializeProducts());
+  }, [dispatch])
 
   useEffect(() => {
     if (history.location.state) {

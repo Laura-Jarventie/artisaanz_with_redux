@@ -31,19 +31,35 @@ const About = () => {
           Frameworkia. Backend on rakennettu PHP:ta, Symfonya, ja Node.js:ia
           käyttäen, ja hostattu Heroku.com:ssa.
         </p>
-          <div className="bold">
+        <div className="bold">
           <p>
             Olemme matkalla julkaisemaan sivua kaikkien käyttöön, mutta vielä
             löytyy hiottavaa. Siihen asti, jos näet käsityön, johon rakastuit
             ensisilmäyksellä ja haluat sen ostaa, voit olla yhteydessä meihin
             alla olevan lomakkeen kautta. Yhdistämme teidät oikeaan artesaaniin.{" "}
-            </p>
-          </div>
+          </p>
+        </div>
         <p>Ota meihin yhteyttä:</p>
-        <p>Emilia Vuorenmaa: emivuore@gmail.com</p>
-        <p>Laura Järventie: laurajarventie@hotmail.com</p>
-        <p>Salla Vuorikko: salla.vuorikko@gmail.com</p>
-        <p>Akseli Miettinen: miettinen.akseli@gmail.com</p>
+        <p>
+          Emilia Vuorenmaa:{" "}
+          <a href="mailto:emivuore@gmail.com">emivuore@gmail.com</a>
+        </p>
+        <p>
+          Laura Järventie:{" "}
+          <a href="mailto:laurajarventie@hotmail.com">
+            laurajarventie@hotmail.com
+          </a>
+        </p>
+        <p>
+          Salla Vuorikko:{" "}
+          <a href="mailto:salla.vuorikko@gmail.com">salla.vuorikko@gmail.com</a>
+        </p>
+        <p>
+          Akseli Miettinen:{" "}
+          <a href="mailto:miettinen.akseli@gmail.com">
+            miettinen.akseli@gmail.com
+          </a>
+        </p>
       </div>
 
       <div>

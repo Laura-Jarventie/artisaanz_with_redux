@@ -34,13 +34,14 @@ a {
 
 .loginForm {
   margin: 200px;
-  width: 40%;
+  max-width: 30%;
 }
 .login-element {
   margin: 5px;
   display: flex;
   padding: 5px;
   justify-content: space-between;
+  background-color: #f8f9fa;
 }
 .login-element input {
   padding: 2px;
