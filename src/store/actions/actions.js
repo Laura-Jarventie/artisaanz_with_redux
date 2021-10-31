@@ -19,6 +19,8 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const ADD_PRODUCT_FOR_USER = "ADD_PRODUCT_FOR_USER";
 export const ADD_PRODUCT_FROM_CART = "ADD_PRODUCT_FROM_CART";
 export const REMOVE_FROM_PRODUCTS = "REMOVE_FROM_PRODUCTS";
+export const INIT_LOGIN = "INIT_LOGIN";
+export const LOGIN_CHANGE = "LOGIN_CHANGE";
 
 export const initializeProducts = () => {
   return async (dispatch) => {
@@ -87,6 +89,27 @@ export const addProduct = (product) => {
     dispatch({
       type: ADD_PRODUCT_FOR_USER,
       data: products,
+    });
+  };
+};
+
+export const initializeLogin = () => {
+  return (dispatch) => {
+    const navigation = "Kirjaudu";
+    dispatch({
+      type: INIT_LOGIN,
+      data: navigation,
+    });
+  };
+};
+
+export const changeLogin = () => {
+  console.log("change login");
+  return (dispatch) => {
+    const navigation = "Kirjaudu ulos";
+    dispatch({
+      type: LOGIN_CHANGE,
+      data: navigation,
     });
   };
 };

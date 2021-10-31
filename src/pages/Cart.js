@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import StripeCheckout from "react-stripe-checkout";
-
 import "../Containers/CartCard.css";
 import { initializeCart, remove } from "../store/actions/actions";
 
@@ -92,13 +91,7 @@ const Cart = () => {
     <main id="cart">
       <h1 className="heading">Ostoskori</h1>
       <div className="cartItems">{cartItems}</div>
-      <h2>Yhteensä {totalPrice}€</h2>
-      {/* <Link to="/kassalle"> Maksamaan mars! </Link> */}
-      <a href="https://artisaanz.herokuapp.com/checkout">
-        {" "}
-        Herokuun maksamaan tästä!{" "}
-      </a>
-      <button onClick={() => maksa()}>Maksa nodella</button>
+      <h2>Yhteensä {totalPrice} €</h2>
 
       <StripeCheckout
         stripeKey={process.env.REACT_APP_KEY}
@@ -107,6 +100,7 @@ const Cart = () => {
         amount={totalPrice * 100}
         shippingAddress
         billingAddress
+        currency="eur"
       >
         <button className="removeBtn">Maksamaan</button>
       </StripeCheckout>
