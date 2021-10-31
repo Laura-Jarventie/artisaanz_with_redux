@@ -7,6 +7,7 @@ import {
   initializeCart,
   initializeMakers,
   initializeProducts,
+  initializeLogin,
 } from "./store/actions/actions";
 import Main from "./Containers/Main";
 import Header from "./Containers/Header";
@@ -20,6 +21,7 @@ function App() {
     dispatch(initializeProducts());
     dispatch(initializeMakers());
     dispatch(initializeCart());
+    dispatch(initializeLogin());
   }, [dispatch]);
 
   return (
