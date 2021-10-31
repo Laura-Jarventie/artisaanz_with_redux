@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import { makerName } from "../store/actions/actions";
+import { initializeMakers, makerName } from "../store/actions/actions";
 
 const Makers = () => {
   const dispatch = useDispatch();
   const makerList = useSelector((state) => state.makers);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    dispatch(initializeMakers());
+  }, [dispatch]);
 
   const makers = makerList.map((maker) => {
     if (maker.id === 3) {
