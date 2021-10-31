@@ -61,7 +61,7 @@ input {
   grid-auto-rows: auto;
   grid-gap: 3rem;
   min-height: 250px;
-  margin: 2rem 0 0 3rem;
+  margin: 1rem 0 0 5rem;
 }
 
 .makersCard {
