@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import StripeCheckout from "react-stripe-checkout";
@@ -10,13 +10,20 @@ const Cart = () => {
   useEffect(() => {
     dispatch(initializeCart());
   }, [dispatch]);
-
-  const tavara = { name: "jotain", price: 2 };
+  const [noItems, setNoItems] = useState(true);
+  const tavara = { name: "esimerkki", price: 1 };
 
   let totalPrice = 0;
   let itemNames = "";
 
   const cartListItems = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    console.log(cartListItems.length);
+    if (cartListItems.length > 0) {
+      setNoItems(false);
+    }
+  });
 
   cartListItems.forEach((element) => {
     totalPrice = totalPrice + element.hinta;
@@ -67,43 +74,49 @@ const Cart = () => {
 
   cartItems = cartList.map((tuote) => {
     return (
-      <div className="cart" key={tuote.id}>
-        <CartCard
-          id={tuote.id}
-          key={tuote.id}
-          kuva={tuote.kuva[0].kuva}
-          nimi={tuote.nimi}
-          hinta={tuote.hinta}
-          removeBtn={
-            <button
-              className="removeBtn"
-              onClick={() => dispatch(remove(tuote))}
-            >
-              Poista
-            </button>
-          }
-        />
-      </div>
+      <>
+        <div className="cart" key={tuote.id}>
+          <CartCard
+            id={tuote.id}
+            key={tuote.id}
+            kuva={tuote.kuva[0].kuva}
+            nimi={tuote.nimi}
+            hinta={tuote.hinta}
+            removeBtn={
+              <button
+                className="removeBtn"
+                onClick={() => dispatch(remove(tuote))}
+              >
+                Poista
+              </button>
+            }
+          />
+        </div>
+        <h2>Yhteensä {totalPrice} €</h2>
+
+        <StripeCheckout
+          stripeKey={process.env.REACT_APP_KEY}
+          token={makePayment}
+          name={itemNames}
+          amount={totalPrice * 100}
+          shippingAddress
+          billingAddress
+          currency="eur"
+        >
+          <button className="removeBtn">Maksamaan</button>
+        </StripeCheckout>
+      </>
     );
   });
+  console.log(cartItems);
 
   return (
     <main id="cart">
       <h1 className="heading">Ostoskori</h1>
-      <div className="cartItems">{cartItems}</div>
-      <h2>Yhteensä {totalPrice} €</h2>
-
-      <StripeCheckout
-        stripeKey={process.env.REACT_APP_KEY}
-        token={makePayment}
-        name={itemNames}
-        amount={totalPrice * 100}
-        shippingAddress
-        billingAddress
-        currency="eur"
-      >
-        <button className="removeBtn">Maksamaan</button>
-      </StripeCheckout>
+      <div>
+        {/* <div className="cartItems"> */}
+        {noItems ? <h2>Ostoskorisi on tyhjä</h2> : cartItems}
+      </div>
     </main>
   );
 };
