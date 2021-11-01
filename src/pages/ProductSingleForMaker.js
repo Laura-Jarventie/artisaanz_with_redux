@@ -118,7 +118,7 @@ const ProductSingleForMaker = () => {
         <p>Kategoria: {tuotteet.kategoria}</p>
 
         <button className="addbtn" onClick={() => history.goBack()}>
-          Takaisin
+          Tuotteisiin
         </button>
         <button className="addbtn">
           <Link to={`/muokkaa/${tuotteet.id}`} /* className="modify" */>
