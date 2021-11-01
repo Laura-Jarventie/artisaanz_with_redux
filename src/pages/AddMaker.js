@@ -23,7 +23,6 @@ const AddMaker = () => {
   const [popOverTitle, setPopOverTitle] = useState();
   const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
-  const [maker, setMaker] = useState();
 
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });

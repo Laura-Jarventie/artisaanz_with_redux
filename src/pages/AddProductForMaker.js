@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router";
 
 import "../App.css";
 

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link, useParams } from "react-router-dom";
 import "../Components/ProductSingle.css";
 import { getSingleProduct } from "../services/services";
-import { addToCart, initializeProducts } from "../store/actions/actions";
+import { addToCart } from "../store/actions/actions";
 
 const ProductSingle = () => {
   const dispatch = useDispatch();

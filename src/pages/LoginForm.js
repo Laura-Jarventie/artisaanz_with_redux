@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import bcrypt from "bcryptjs";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 
 import "../Containers/LoginForm.css";
@@ -9,7 +9,6 @@ import { changeLogin } from "../store/actions/actions";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [maker, setMaker] = useState();
   const [logged, setLogged] = useState(false);
   const makersList = useSelector((state) => state.makers);
