@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import { initializeMakers, makerName } from "../store/actions/actions";
+import { initializeMakers } from "../store/actions/actions";
 
 const Makers = () => {
   const dispatch = useDispatch();
