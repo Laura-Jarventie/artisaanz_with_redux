@@ -121,11 +121,14 @@ const ProductSingleForMaker = () => {
           Tuotteisiin
         </button>
         <button className="addbtn">
-          <Link to={`/muokkaa/${tuotteet.id}`} /* className="modify" */>
+          <Link
+            id="btnlink"
+            to={`/muokkaa/${tuotteet.id}`} /* className="modify" */
+          >
             Muokkaa
           </Link>
         </button>
-        <button className="addbtn" ref={target} onClick={handleShowModal}>
+        <button className="removeBtn" ref={target} onClick={handleShowModal}>
           Poista tuote
         </button>
 

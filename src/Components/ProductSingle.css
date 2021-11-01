@@ -22,7 +22,6 @@
 }
 
 .singleProduct button {
-  height: 30%;
   width: 25%;
   float: left;
   border: none;
@@ -59,6 +58,15 @@
 #backBtn:hover {
   font-size: 1.2rem;
   font-weight: 600;
+  color: var(--txtcolor2);
+}
+
+#btnlink {
+  color: var(--secondarycolor);
+}
+
+#btnlink:hover {
+  color: var(--txtcolor2);
 }
 
 .adminbtn:hover {

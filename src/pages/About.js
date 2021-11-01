@@ -12,7 +12,7 @@ const About = () => {
         <h1>Hei! Toivottavasti piditte sivustamme!</h1>
 
         <p>
-          Me(Laura, Akseli, Emilia ja Salla) ollaan luokkakavereita Helsinki
+          Me (Laura, Akseli, Emilia ja Salla) ollaan luokkakavereita Helsinki
           Business Collegessa ja valmistumme toukokuussa 2022 Full Stack Web
           Developereiksi. Idea tähän projektiin tulee oikeasta elämästä: Koko
           maailma on istunut kotona viimeisen puolentoista vuoden ajan, ja

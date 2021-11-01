@@ -1,10 +1,9 @@
 footer {
   text-align: center;
   color: #0d0d0d;
-  min-height: 50px;
+  height: 100px;
   font-family: "EB Garamond", serif;
   font-weight: 800;
   background-color: #f8f9fa;
   padding-top: 10px;
-  padding-bottom: 5px;
 }

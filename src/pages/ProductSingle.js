@@ -57,6 +57,7 @@ const ProductSingle = () => {
                   }}
                 >
                   <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
+                  <p>Klikkaa kuva suuremmaksi</p>
                 </button>
               );
             })}

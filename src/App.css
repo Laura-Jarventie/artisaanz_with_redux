@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+:root {
+  --btn-main: #0a1943;
+  --secondarycolor: #fff;
+  --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  --txtcolor2: #a8611f;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +27,7 @@ html {
 
 main {
   padding-top: 10px;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 190px);
   background-color: #fffffb;
   font-family: "EB Garamond", serif;
   font-weight: 600;
@@ -80,6 +88,11 @@ input {
   display: block;
 }
 
+.makerside {
+  margin-top: 10px;
+  margin-left: 2rem;
+}
+
 .makersCard a:hover {
   font-weight: 700;
   text-decoration: underline;
@@ -114,13 +127,19 @@ input {
   font-family: "EB Garamond", serif;
 }
 
+.addbtn:hover {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--txtcolor2);
+}
+
 .addbtn a {
   color: white;
   text-decoration: none;
 }
 
 .addbtn a:hover {
-  color: white;
+  color: var(--txtcolor2);
 }
 /***navigation***/
 .dropdown-item.active,

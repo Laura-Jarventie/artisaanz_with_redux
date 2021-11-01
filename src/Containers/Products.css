@@ -1,3 +1,10 @@
+:root {
+  --btn-main: #0a1943;
+  --secondarycolor: #fff;
+  --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  --txtcolor2: #a8611f;
+}
+
 .productCard {
   border-radius: 5px;
   background-color: #fafafa;
@@ -86,6 +93,12 @@
   font-family: "EB Garamond", serif;
 }
 
+#buyBtn:hover {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--txtcolor2);
+}
+
 #artisanbtn {
   position: relative;
   height: 40px;
@@ -104,6 +117,12 @@
   font-size: 14px;
   text-align: center;
   font-family: "EB Garamond", serif;
+}
+
+#artisanbtn:hover {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--txtcolor2);
 }
 
 .btn-primary:hover {
