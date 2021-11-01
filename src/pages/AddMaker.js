@@ -23,6 +23,7 @@ const AddMaker = () => {
   const [popOverTitle, setPopOverTitle] = useState();
   const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
+  const [maker, setMaker] = useState();
 
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -39,13 +40,22 @@ const AddMaker = () => {
       data.password = await bcrypt.hash(data.password, 12);
       axios
         .post("https://artisaanz.herokuapp.com/seller/add", data)
-        .then(setPopOverTitle("Artesaani lisätty"))
-        .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
-        .catch((error) => {
-          setPopOverTitle("Virhe");
-          setPopOverMessage("Rekisteröinti ei onnistunut.");
-          console.log(error.response.data);
-        });
+        .then(
+          setPopOverTitle("Artesaani lisätty"),
+          setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi.")
+        )
+        // .then(setPopOverTitle("Artesaani lisätty"))
+        // .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
+        .then(
+          window.setTimeout(() => {
+            window.location.assign("/kirjaudu");
+          }, 2000)
+        );
+      // .catch((error) => {
+      //   setPopOverTitle("Virhe");
+      //   setPopOverMessage("Rekisteröinti ei onnistunut.");
+      //   console.log(error.response.data);
+      // });
       setShowPopOver(true);
       e.target.reset();
     } else {
@@ -117,7 +127,7 @@ const AddMaker = () => {
           />
         </Form.Group>
         <Button type="submit" className="addbtn" value="Send data" ref={target}>
-          Lähetä
+          Rekisteröidy
         </Button>
         <Overlay target={target.current} placement="right" show={showPopOver}>
           {popover}

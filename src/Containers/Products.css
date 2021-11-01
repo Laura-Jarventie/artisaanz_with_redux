@@ -103,10 +103,11 @@
   color: var(--txtcolor2);
 }
 
-#artisanbtn {
+.artisanbtn {
   position: relative;
   height: 40px;
-  width: 150px;
+  min-width: 150px;
+  padding: 0 10px 0 10px;
   border: 0;
   border-radius: 5px;
   text-transform: uppercase;
@@ -114,16 +115,17 @@
   letter-spacing: 0.2rem;
   overflow: hidden;
   box-shadow: var(--btnshadow);
-  display: block;
+  display: inline-block;
   border-radius: 15px;
   background: var(--btn-main);
   color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
   font-family: var(--font);
+  margin: 10px;
 }
 
-#artisanbtn:hover {
+.artisanbtn:hover {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--txtcolor2);
@@ -131,6 +133,7 @@
 
 .btn-primary:hover {
   transform: scale(1.1);
+  background-color: red;
 }
 
 @media (max-width: 899px) {

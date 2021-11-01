@@ -24,7 +24,7 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(initializeProducts());
-  }, [dispatch])
+  }, [dispatch]);
 
   useEffect(() => {
     if (history.location.state) {
@@ -96,10 +96,10 @@ const Products = () => {
           <div className="filteredProducts">{filteredProducts}</div>
           {seller && (
             <div>
-              <button id="artisanbtn" onClick={() => history.goBack()}>
+              <button className="artisanbtn" onClick={() => history.goBack()}>
                 Takaisin
               </button>
-              <button id="artisanbtn" onClick={() => removeSeller()}>
+              <button className="artisanbtn" onClick={() => removeSeller()}>
                 Kaikki tuotteet
               </button>
             </div>

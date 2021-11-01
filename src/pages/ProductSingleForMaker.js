@@ -117,20 +117,22 @@ const ProductSingleForMaker = () => {
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
 
-        <button className="addbtn" onClick={() => history.goBack()}>
-          Tuotteisiin
-        </button>
-        <button className="addbtn">
-          <Link
-            id="btnlink"
-            to={`/muokkaa/${tuotteet.id}`} /* className="modify" */
-          >
-            Muokkaa
-          </Link>
-        </button>
-        <button className="removeBtn" ref={target} onClick={handleShowModal}>
-          Poista tuote
-        </button>
+        <div className="buttonsRow">
+          <button className="addbtn" onClick={() => history.goBack()}>
+            Tuotteisiin
+          </button>
+          <button className="addbtn">
+            <Link
+              id="btnlink"
+              to={`/muokkaa/${tuotteet.id}`} /* className="modify" */
+            >
+              Muokkaa
+            </Link>
+          </button>
+          <button className="removeBtn" ref={target} onClick={handleShowModal}>
+            Poista tuote
+          </button>
+        </div>
 
         <Overlay target={target.current} placement="bottom" show={showPopOver}>
           {popover}
