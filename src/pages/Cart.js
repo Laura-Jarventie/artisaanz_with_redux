@@ -55,6 +55,8 @@ const Cart = () => {
         const { status } = response;
         console.log("STATUS ", status);
         emptyCart();
+      })
+      .then(() => {
         window.location.assign("/onnistui");
       })
       .catch((error) => {
