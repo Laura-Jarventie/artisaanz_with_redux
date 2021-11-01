@@ -1,19 +1,25 @@
+:root {
+  --txtcolor: #0d0d0d;
+  --font: "EB Garamond", serif;
+  --txtcolor2: #a8611f;
+}
+
 header {
   position: relative;
   display: flex;
   height: 90px;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
   font-weight: 800;
 }
 
 header a {
   text-decoration: none;
-  color: #0d0d0d;
+  color: var(--txtcolor);
   font-size: 1.5rem;
 }
 
 header a:hover {
-  color: #a8611f;
+  color: var(--txtcolor2);
 }
 
 header nav ul {

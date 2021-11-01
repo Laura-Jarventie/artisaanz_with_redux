@@ -3,6 +3,10 @@
   --secondarycolor: #fff;
   --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
   --txtcolor2: #a8611f;
+  --productcatcolor: #a3a2a2;
+  --txtcolor: #0d0d0d;
+  --bordercolor: #eee;
+  --font: "EB Garamond", serif;
 }
 
 .productCard {
@@ -28,14 +32,14 @@
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: #a3a2a2;
+  color: var(--productcatcolor);
 }
 
 .product-details h4 {
   font-weight: 600;
   display: block;
   margin: 1.5rem 0;
-  color: #0d0d0d;
+  color: var(--txtcolor);
 }
 
 .product-details a {
@@ -43,25 +47,25 @@
 }
 
 .product-details h4:hover {
-  color: #a8611f;
+  color: var(--txtcolor2);
   text-decoration: underline;
 }
 
 .product-details p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #0d0d0d;
+  color: var(--txtcolor);
 }
 
 .product-bottom-details {
   overflow: hidden;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--bordercolor);
   padding-top: 1rem;
 }
 
 .product-price {
   font-size: 1.5rem;
-  color: #a8611f;
+  color: var(--txtcolor2);
   font-weight: 600;
 }
 
@@ -83,14 +87,14 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 
 #buyBtn:hover {
@@ -109,14 +113,14 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 
 #artisanbtn:hover {
@@ -147,14 +151,14 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 .btn-check:active + .btn-secondary,
 .btn-check:checked + .btn-secondary,
@@ -170,14 +174,14 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 
 .btn-primary {
@@ -190,14 +194,14 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 
 .btn-primary:hover {
@@ -218,14 +222,14 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 .btn-check:focus + .btn-primary,
 .btn-primary:focus {

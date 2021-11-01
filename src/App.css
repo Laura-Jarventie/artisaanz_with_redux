@@ -5,6 +5,9 @@
   --secondarycolor: #fff;
   --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
   --txtcolor2: #a8611f;
+  --bgmain: #fffffb;
+  --bordermaker: #583a22;
+  --txtcolor: #0d0d0d;
 }
 
 * {
@@ -28,8 +31,8 @@ html {
 main {
   padding-top: 10px;
   min-height: calc(100vh - 190px);
-  background-color: #fffffb;
-  font-family: "EB Garamond", serif;
+  background-color: var(--bgmain);
+  font-family: var(--font);
   font-weight: 600;
 }
 
@@ -73,16 +76,16 @@ input {
 }
 
 .makersCard {
-  border: 2px solid #583a22;
-  box-shadow: 2px 2px 5px #583a22;
+  border: 2px solid var(--bordermaker);
+  box-shadow: 2px 2px 5px var(--bordermaker);
   border-radius: 10px;
-  color: #0d0d0d;
+  color: var(--txtcolor);
   width: 500px;
   margin: 25px;
 }
 
 .makersCard a {
-  color: #a8611f;
+  color: var(--txtcolor2);
   text-decoration: none;
   font-weight: 900;
   display: block;
@@ -96,7 +99,7 @@ input {
 .makersCard a:hover {
   font-weight: 700;
   text-decoration: underline;
-  color: #8d521a;
+  color: var(--txtcolor2);
 }
 .productSpinner {
   position: absolute;
@@ -117,14 +120,14 @@ input {
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 
 .addbtn:hover {
@@ -134,7 +137,7 @@ input {
 }
 
 .addbtn a {
-  color: white;
+  color: var(--secondarycolor);
   text-decoration: none;
 }
 
@@ -146,7 +149,7 @@ input {
 .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #583a22;
+  background-color: var(--bordermaker);
 }
 .icon {
   font-size: 2rem;
@@ -273,13 +276,13 @@ input {
     font-size: 1.1rem;
     letter-spacing: 0.2rem;
     overflow: hidden;
-    box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+    box-shadow: var(--btnshadow);
     display: block;
     border-radius: 15px;
-    background: #0a1943;
-    color: white;
+    background: var(--btn-main);
+    color: var(--secondarycolor);
     font-size: 14px;
     text-align: center;
-    font-family: "EB Garamond", serif;
+    font-family: var(--font);
   }
 }
