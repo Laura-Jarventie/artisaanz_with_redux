@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import CartCard from "../Containers/CartCard";
 import StripeCheckout from "react-stripe-checkout";
 import "../Containers/CartCard.css";
+import "../Containers/Cart.css";
 import { initializeCart, remove } from "../store/actions/actions";
 
 const Cart = () => {
@@ -97,14 +98,14 @@ const Cart = () => {
 
   return (
     <main id="cart">
-      <h1 className="heading">Ostoskori</h1>
+      <h1 className="cartside">Ostoskori</h1>
       <div>
         {noItems ? (
-          <h2>Ostoskorisi on tyhjä</h2>
+          <h2 className="cartside">Ostoskorisi on tyhjä</h2>
         ) : (
           <>
             {cartItems}
-            <h2>Yhteensä {totalPrice} €</h2>
+            <h2 className="cartside">Yhteensä {totalPrice} €</h2>
 
             <StripeCheckout
               stripeKey={process.env.REACT_APP_KEY}
@@ -115,7 +116,7 @@ const Cart = () => {
               billingAddress
               currency="eur"
             >
-              <button className="removeBtn">Maksamaan</button>
+              <button className="cartBtn">Maksamaan</button>
             </StripeCheckout>
           </>
         )}

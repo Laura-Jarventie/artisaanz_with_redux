@@ -57,6 +57,7 @@ const ProductSingle = () => {
                   }}
                 >
                   <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
+                  <p>Klikkaa kuva suuremmaksi</p>
                 </button>
               );
             })}
@@ -87,7 +88,13 @@ const ProductSingle = () => {
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
         <div className="buttons">
-          <button id="buyBtn" onClick={() => {dispatch(addToCart(tuotteet)); setTuotteet("");}}>
+          <button
+            id="buyBtn"
+            onClick={() => {
+              dispatch(addToCart(tuotteet));
+              setTuotteet("");
+            }}
+          >
             Osta
           </button>
           <button id="backBtn" onClick={() => history.goBack()}>

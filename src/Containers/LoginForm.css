@@ -27,6 +27,12 @@
   font-family: var(--font);
 }
 
+.loginBtn:hover {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--txtcolor2);
+}
+
 a {
   color: var(--txtcolor2);
   font-weight: 800;

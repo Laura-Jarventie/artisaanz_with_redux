@@ -68,7 +68,7 @@ const MakersProducts = () => {
 
   return (
     <>
-      <h2>Tuotteesi:</h2>
+      <h2 className="makerside">Tuotteesi:</h2>
       <div id="products">
         <Switch>
           <Route path="/munTuotteet/:id">

@@ -2,6 +2,12 @@
   --btn-main: #0a1943;
   --secondarycolor: #fff;
   --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  --txtcolor2: #a8611f;
+}
+
+.cartside {
+  padding-left: 2rem;
+  font-weight: 800;
 }
 
 .cartBtn {
@@ -9,7 +15,7 @@
   margin-left: 300px;
   margin-bottom: 40px;
   height: 40px;
-  width: 200px;
+  width: 300px;
   border: 0;
   border-radius: 5px;
   text-transform: uppercase;
@@ -25,9 +31,10 @@
   text-align: center;
 }
 
-.heading {
-  margin-left: 40px;
-  font-weight: 800;
+.cartBtn:hover {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: green;
 }
 
 @media (max-width: 899px) {

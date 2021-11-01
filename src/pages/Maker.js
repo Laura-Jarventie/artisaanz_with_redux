@@ -35,10 +35,10 @@ const Maker = () => {
     <>
       {maker ? (
         <>
-          <h1>Tervetuloa käyttäjä {maker}!</h1>
+          <h1 className="makerside">Tervetuloa käyttäjä {maker}!</h1>
           {productByCurrentUser ? (
             <>
-              <h2>
+              <h2 className="makerside">
                 Lisää tuotteita:
                 <Link
                   to={{
@@ -54,7 +54,7 @@ const Maker = () => {
             </>
           ) : (
             <>
-              <h2>
+              <h2 className="makerside">
                 Lisää ensimmäinen tuotteesi{" "}
                 <Link
                   to={{
@@ -70,7 +70,7 @@ const Maker = () => {
           )}
         </>
       ) : (
-        <h2>
+        <h2 className="makerside">
           Et ole kirjautunut sisään. Kirjaudu{" "}
           <Link
             to={{
