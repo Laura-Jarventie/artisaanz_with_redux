@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      Copyright ©
+      <p>Copyright ©</p>
       <p>
         Ota meihin yhteyttä:&nbsp;
         <a href="mailto:salla.vuorikko@gmail.com">salla.vuorikko@gmail.com</a>
