@@ -100,7 +100,7 @@ const Products = () => {
                 Takaisin
               </button>
               <button id="artisanbtn" onClick={() => removeSeller()}>
-                Kaikkien artesaanien tuotteet
+                Kaikki tuotteet
               </button>
             </div>
           )}

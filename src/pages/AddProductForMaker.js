@@ -173,7 +173,7 @@ const AddProductForMaker = () => {
             {popover}
           </Overlay>
           <button className="addbtn" onClick={() => history.goBack()}>
-            Takaisin kaikkiin tuotteisiin
+            Takaisin
           </button>
         </Form>
       </div>

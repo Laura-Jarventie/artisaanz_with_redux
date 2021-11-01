@@ -4,7 +4,7 @@
   box-shadow: 0 2px 7px #dfdfdf;
   width: 380px;
   position: relative;
-  margin: 50px auto;
+  margin: 30px auto;
   padding: 1rem;
 }
 
@@ -62,12 +62,12 @@
   display: grid;
   grid-template-columns: repeat(3, 350px);
   grid-auto-rows: auto;
-  grid-gap: 3rem;
+  grid-gap: 0 3rem;
+  margin-left: 40px;
 }
 
 #buyBtn {
   position: relative;
-  margin-top: 20px;
   height: 40px;
   width: 200px;
   border: 0;
@@ -89,7 +89,7 @@
 #artisanbtn {
   position: relative;
   height: 40px;
-  width: 100px;
+  width: 150px;
   border: 0;
   border-radius: 5px;
   text-transform: uppercase;

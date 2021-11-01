@@ -1,15 +1,25 @@
+:root {
+  --btn-main: #0a1943;
+  --font: "EB Garamond", serif;
+  --secondarycolor: #fff;
+  --txtcolor2: #a8611f;
+  --removecolor: red;
+  --mainshadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+}
+
 .cartCard {
   height: 350px;
   width: 700px;
   margin: 40px;
   border-radius: 7px 7px 7px 7px;
-  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--mainshadow);
 }
 
 .product-image {
   float: left;
   height: 300px;
-  width: 300px;
+  width: 250px;
 }
 
 .product-image img {
@@ -23,17 +33,17 @@
   width: 250px;
   padding: 2rem 0 0 1.5rem;
   border-radius: 0 7px 10px 7px;
-  background-color: #ffffff;
+  background-color: var(--secondarycolor);
 }
 
 .product-text h1 {
-  font-family: "EB Garamond", serif;
+  font-family: var(--font);
 }
 
 .product-text p {
   height: 125px;
-  font-family: "EB Garamond", serif;
-  color: #a8611f;
+  font-family: var(--font);
+  color: var(--txtcolor2);
   line-height: 1.7em;
   font-size: 20px;
   overflow: hidden;
@@ -49,15 +59,15 @@
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+  box-shadow: var(--btnshadow);
   display: block;
   border-radius: 15px;
-  background: #0a1943;
-  color: white;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
   font-size: 14px;
   text-align: center;
 }
 .removeBtn:hover {
   transform: scale(1.1);
-  background: red;
+  background: var(--removecolor);
 }
