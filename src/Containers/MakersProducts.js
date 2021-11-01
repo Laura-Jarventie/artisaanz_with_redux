@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ProductCardForMaker from "./ProductCardForMaker";
 import ProductSingleForMaker from "../pages/ProductSingleForMaker";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import axios from "axios";
 import "../Containers/Products.css";
 import Spinner from "react-bootstrap/Spinner";
-import { useHistory } from "react-router-dom";
 import { initializeProducts } from "../store/actions/actions";
 
 const MakersProducts = () => {

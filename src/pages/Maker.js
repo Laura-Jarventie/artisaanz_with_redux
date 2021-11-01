@@ -31,7 +31,7 @@ const Maker = () => {
   });
 
   return (
-    // Here we're using nested terniary, which is bit difficult to read, but since React.js doesn't handle regular if-statements inside rendering, we chose to do it this way. So first check if user is logged in and then check if the user has any products in database:
+    // Here we're using nested terniary, which is bit difficult to read, but since React.js doesn't handle regular if-statements inside rendering, we chose to do it this way. So first check if user is logged in and then check if the user has any products in database and render accordingly:
     <>
       {maker ? (
         <>
@@ -39,7 +39,7 @@ const Maker = () => {
           {productByCurrentUser ? (
             <>
               <h2>
-                Lisää tuotteita:
+                Lisää tuotteita{" "}
                 <Link
                   to={{
                     pathname: "/lisäätuote",

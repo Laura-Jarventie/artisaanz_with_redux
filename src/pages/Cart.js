@@ -113,7 +113,7 @@ const Cart = () => {
               amount={totalPrice * 100}
               shippingAddress
               billingAddress
-              currency="eur"
+              currency="EUR"
             >
               <button className="removeBtn">Maksamaan</button>
             </StripeCheckout>

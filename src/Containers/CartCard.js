@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ListGroup from "react-bootstrap/ListGroup";
 import "./CartCard.css";
 
 const CartCard = ({ nimi, kuva, hinta, removeBtn }) => {

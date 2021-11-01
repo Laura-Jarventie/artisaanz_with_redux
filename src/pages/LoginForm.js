@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import bcrypt from "bcryptjs";
 import { Link, useHistory } from "react-router-dom";
@@ -31,10 +31,6 @@ const LoginForm = () => {
         console.log(logged);
 
         <Redirect to="/myyjälle" />;
-      } else {
-        console.log(
-          "That's not me, my email (if any) is " + maker.email + " 🤔"
-        );
       }
     });
   };
@@ -54,7 +50,11 @@ const LoginForm = () => {
           <label htmlFor="examplePw">Salasana </label>
           <input type="password" placeholder="salasana" name="password"></input>
         </div>
-        <button className="loginBtn" type="submit" onClick={() => dispatch(changeLogin())}>
+        <button
+          className="loginBtn"
+          type="submit"
+          onClick={() => dispatch(changeLogin())}
+        >
           KIRJAUDU
         </button>
         <p>
