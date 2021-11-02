@@ -19,7 +19,7 @@
 .product-image {
   float: left;
   height: 300px;
-  width: 250px;
+  max-width: 300px;
 }
 
 .product-image img {

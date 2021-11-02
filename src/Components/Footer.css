@@ -1,15 +1,15 @@
 :root {
+  --bgcolor: #f8f9fa;
   --txtcolor: #0d0d0d;
   --font: "EB Garamond", serif;
-  --bgcolor: #f8f9fa;
 }
 
 footer {
-  text-align: center;
-  color: var(--txtcolor);
   height: 100px;
+  padding-top: 10px;
   font-family: var(--font);
   font-weight: 800;
+  text-align: center;
   background-color: var(--bgcolor);
-  padding-top: 10px;
+  color: var(--txtcolor);
 }

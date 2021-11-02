@@ -1,8 +1,8 @@
 :root {
-  --btn-main: #0a1943;
-  --font: "EB Garamond", serif;
-  --secondarycolor: #fff;
   --txtcolor2: #a8611f;
+  --secondarycolor: #fff;
+  --font: "EB Garamond", serif;
+  --btn-main: #0a1943;
   --btnshadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
 }
 
@@ -23,9 +23,9 @@
 
 .singleProduct button {
   width: 25%;
+  margin: 2rem;
   float: left;
   border: none;
-  margin: 2rem;
 }
 
 .mainImage {
@@ -34,24 +34,22 @@
 
 #buyBtn,
 #backBtn {
-  margin-top: 20px;
-  position: relative;
   height: 40px;
   width: 200px;
-  border: 0;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  letter-spacing: 0.2rem;
-  overflow: hidden;
-  box-shadow: var(--btnshadow);
+  margin-top: 20px;
   display: block;
-  border-radius: 15px;
-  background: var(--btn-main);
-  color: var(--secondarycolor);
+  position: relative;
+  font-family: var(--font);
   font-size: 14px;
   text-align: center;
-  font-family: var(--font);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
+  border: 0;
+  border-radius: 15px;
+  box-shadow: var(--btnshadow);
+  overflow: hidden;
 }
 
 #buyBtn:hover,
@@ -79,29 +77,27 @@
 }
 
 .popupBtn {
-  position: relative;
   height: 40px;
   width: 100px;
-  margin-left: 20px;
-  border: 0;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  letter-spacing: 0.2rem;
-  overflow: hidden;
-  box-shadow: var(--btnshadow);
+  margin-top: 20px;
   display: block;
-  border-radius: 15px;
-  background: var(--btn-main);
-  color: var(--secondarycolor);
+  position: relative;
+  font-family: var(--font);
   font-size: 14px;
   text-align: center;
-  font-family: var(--font);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background: var(--btn-main);
+  color: var(--secondarycolor);
+  border: 0;
+  border-radius: 15px;
+  box-shadow: var(--btnshadow);
+  overflow: hidden;
 }
 
 .buttonsRow {
-  display: inline-block;
   min-width: 780px;
+  display: inline-block;
 }
 /******login page margin*****/
 .signIn {
@@ -114,31 +110,31 @@
   text-decoration: none;
 }
 a.modify {
-  color: #000;
   font-weight: 400;
+  color: #000;
 }
 
 @media (max-width: 899px) {
   .singleProduct {
-    padding: 0px;
     width: 900px;
+    padding: 0px;
   }
 
   .singleProduct img {
-    max-width: 1000px;
     max-height: 900px;
+    max-width: 1000px;
   }
 
   .singleProduct h1 {
     width: 200px;
-    text-align: center;
     margin: 0 auto;
+    text-align: center;
   }
 
   .singleProduct p {
     width: 200px;
-    text-align: center;
     margin: 0 auto;
+    text-align: center;
   }
 
   .popup img {
