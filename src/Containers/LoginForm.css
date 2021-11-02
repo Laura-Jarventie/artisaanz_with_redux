@@ -51,6 +51,7 @@ a {
 }
 .login-element input {
   padding: 2px;
+  margin: 2px;
 }
 .login-element label {
   border-radius: 5px;

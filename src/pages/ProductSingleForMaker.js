@@ -53,7 +53,6 @@ const ProductSingleForMaker = () => {
         setPopOverMessage("Tuotetta ei voitu poistaa.");
       });
     setShowPopOver(true);
-    console.log("product removed from database");
   };
 
   const popupHandler = () => {

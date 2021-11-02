@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import ProductCard from "../Containers/ProductCard";
 import ProductSingle from "./ProductSingle";
 import "../Containers/Products.css";
 import SearchBox from "../Containers/SearchBox";
 import SearchBoxDropdown from "../Containers/SearchboxDropdown";
-import { useHistory } from "react-router-dom";
 import { addToCart, initializeProducts } from "../store/actions/actions";
 
 const Products = () => {

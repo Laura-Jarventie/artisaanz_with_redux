@@ -44,11 +44,6 @@ const MakersProducts = () => {
     setLoading(true);
   }, []);
 
-  /*  const searchValueHandler = (e) => {
-    setSearchInput(e.target.value);
-    console.log(searchInput);
-  }; */
-
   const filteredProducts = productFilter.reverse().map((tuote) => {
     return (
       <div key={tuote.id}>
