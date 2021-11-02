@@ -13,7 +13,7 @@
   border-radius: 5px;
   background-color: #fafafa;
   box-shadow: 0 2px 7px #dfdfdf;
-  width: 380px;
+  width: auto;
   position: relative;
   margin: 30px auto;
   padding: 1rem;
@@ -69,12 +69,19 @@
   font-weight: 600;
 }
 
+.gridContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
 .filteredProducts {
+  width:1200px;
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   grid-gap: 0 3rem;
-  margin-left: 40px;
 }
 
 #buyBtn {
