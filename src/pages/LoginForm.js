@@ -31,12 +31,19 @@ const LoginForm = () => {
     e.preventDefault();
     let email = e.target.email.value;
     let password = e.target.password.value;
+    let found = false;
 
     makersList.forEach((el) => {
       if (el.email === email) {
-        comparePW(password, el);
+        found = true;
+        return comparePW(password, el);
       }
     });
+    if (!found) {
+      alert(
+        `Tarkista että kirjoitit osoitteen oikein. Osoitteella ${email} ei löydy käyttäjää`
+      );
+    }
   };
 
   return (
