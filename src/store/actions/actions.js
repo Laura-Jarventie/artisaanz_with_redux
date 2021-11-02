@@ -6,13 +6,11 @@ import {
   removeFromCart,
   addProductForUser,
   sendToProducts,
-  removeFromProducts
+  removeFromProducts,
 } from "../../services/services";
 
 export const INIT_PRODUCTS = "INIT_PRODUCTS";
 export const INIT_MAKERS = "INIT_MAKERS";
-// export const SELECT_MAKER = "SELECT_MAKER";
-// export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
 export const INIT_CART = "INIT_CART";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
@@ -69,7 +67,6 @@ export const addToCart = (product) => {
 
 export const remove = (tuote) => {
   return async (dispatch) => {
-
     await removeFromCart(tuote.id);
     dispatch({
       type: REMOVE_FROM_CART,
@@ -104,7 +101,6 @@ export const initializeLogin = () => {
 };
 
 export const changeLogin = () => {
-  console.log("change login");
   return (dispatch) => {
     const navigation = "Kirjaudu ulos";
     dispatch({
@@ -113,32 +109,3 @@ export const changeLogin = () => {
     });
   };
 };
-
-// export const restoreProduct = (product) => {
-//   console.log("restore product");
-//   return async (dispatch) => {
-//     const products = await sendToProducts(product);
-//     dispatch({
-//       type: ADD_PRODUCT_FROM_CART,
-//       data: products,
-//     });
-//   };
-// };
-
-// export const makerName = (makerName) => {
-//   return (dispatch) => {
-//     dispatch({
-//       type: SELECT_MAKER,
-//       data: makerName,
-//     });
-//   };
-// };
-
-// export const searchProduct = (nimi) => {
-//   return async (dispatch) => {
-//     dispatch({
-//       type: SEARCH_PRODUCT,
-//       data: nimi,
-//     });
-//   };
-// };

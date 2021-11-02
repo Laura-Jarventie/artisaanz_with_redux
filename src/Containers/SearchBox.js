@@ -6,7 +6,6 @@ import "./SearchBox.css";
 
 const SearchBox = ({ search }) => {
   const [seller, setSeller] = useState();
-
   const history = useHistory();
 
   useEffect(() => {

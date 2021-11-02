@@ -20,7 +20,6 @@ const Cart = () => {
   const cartList = useSelector((state) => state.cart);
 
   useEffect(() => {
-    console.log(cartList.length);
     if (cartList.length > 0) {
       setNoItems(false);
     }
@@ -41,7 +40,7 @@ const Cart = () => {
       token,
       tavara,
     };
-    console.log(body.tavara);
+
     const headers = {
       "Content-Type": "application/json",
     };
@@ -51,24 +50,19 @@ const Cart = () => {
       body: JSON.stringify(body),
     })
       .then((response) => {
-        console.log("RESPONSE ", response);
-        const { status } = response;
-        console.log("STATUS ", status);
+        //const { status } = response;
         emptyCart();
       })
       .then(() => {
         window.location.assign("/onnistui");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         window.location.assign("/epäonnistui");
       });
   };
 
   const emptyCart = () => {
-    console.log("Tyhjätääs ostoskori");
     cartList.forEach((el) => {
-      console.log("Removing " + el.nimi);
       dispatch(remove(el));
     });
   };
@@ -96,7 +90,6 @@ const Cart = () => {
       </>
     );
   });
-  console.log(cartItems);
 
   return (
     <main id="cart">

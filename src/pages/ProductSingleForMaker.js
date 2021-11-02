@@ -107,13 +107,7 @@ const ProductSingleForMaker = () => {
             );
           })}
         <h1>{tuotteet.nimi}</h1>
-
         <p>{tuotteet.kuvaus}</p>
-        <p>
-          {/* <Link to={`/artesaanit/${tuotteet.artesaani}`}>
-            Artesaani: {tuotteet.artesaani}
-          </Link> */}
-        </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
 
@@ -122,10 +116,7 @@ const ProductSingleForMaker = () => {
             Tuotteisiin
           </button>
           <button className="addbtn">
-            <Link
-              id="btnlink"
-              to={`/muokkaa/${tuotteet.id}`} /* className="modify" */
-            >
+            <Link id="btnlink" to={`/muokkaa/${tuotteet.id}`}>
               Muokkaa
             </Link>
           </button>

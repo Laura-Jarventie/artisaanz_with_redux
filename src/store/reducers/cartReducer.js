@@ -9,22 +9,19 @@ const cartReducer = (state = [], action) => {
       return action.data;
     case actionTypes.ADD_TO_CART:
       updatedCart = [...state];
-      console.log(action.data);
       updatedCart.push({
         ...action.data,
       });
       return updatedCart;
 
-      case actionTypes.REMOVE_FROM_CART:
+    case actionTypes.REMOVE_FROM_CART:
+      updatedCart = [...state];
 
-        updatedCart = [...state];
-  
-        updatedItemIndex = updatedCart.findIndex(
-          (item) => item.id === action.payload
-        );
-          updatedCart.splice(updatedItemIndex, 1);
-        console.log(updatedItemIndex);
-        return updatedCart;
+      updatedItemIndex = updatedCart.findIndex(
+        (item) => item.id === action.payload
+      );
+      updatedCart.splice(updatedItemIndex, 1);
+      return updatedCart;
 
     default:
       return state;
