@@ -25,7 +25,7 @@ const MakersProducts = () => {
     if (history.location.state) {
       setMaker(history.location.state.maker);
     }
-  });
+  }, [history.location.state]);
 
   const productFilter = tuote.filter((tuote) => {
     if (maker) {
