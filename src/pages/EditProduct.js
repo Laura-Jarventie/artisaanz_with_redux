@@ -28,7 +28,6 @@ const EditProduct = () => {
   let { id } = useParams();
   const history = useHistory();
   const target = useRef(null);
-  console.log("product id: " + id);
 
   useEffect(() => {
     if (!tuotteet) {
@@ -45,7 +44,6 @@ const EditProduct = () => {
 
   const editData = (e) => {
     e.preventDefault();
-    console.log("Let's edit...");
     if (data.nimi !== "") {
       axios
         .post(
@@ -124,8 +122,7 @@ const EditProduct = () => {
       data.hinta === "" &&
       data.kategoria === "" &&
       data.artesaani === ""
-    )
-      console.log("Done!");
+    );
   };
 
   const popover = (

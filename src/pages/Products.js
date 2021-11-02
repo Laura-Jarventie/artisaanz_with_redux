@@ -6,16 +6,12 @@ import ProductSingle from "./ProductSingle";
 import "../Containers/Products.css";
 import SearchBox from "../Containers/SearchBox";
 import SearchBoxDropdown from "../Containers/SearchboxDropdown";
-// import { searchProduct } from "../store/actions/actions";
 import { useHistory } from "react-router-dom";
 import { addToCart, initializeProducts } from "../store/actions/actions";
 
 const Products = () => {
-  // const [tuote, setTuote] = useState([]);
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.products);
-  // const [loading, setLoading] = useState(false);
-  // const nimi = useSelector((state) => state.nimi);
   const [searchInput, setSearchInput] = useState("");
   const [seller, setSeller] = useState();
 
@@ -53,7 +49,6 @@ const Products = () => {
     } else {
       setSearchInput(e.target.value);
     }
-    console.log(searchInput);
   };
 
   const removeSeller = () => {

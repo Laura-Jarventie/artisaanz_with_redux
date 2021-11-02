@@ -34,7 +34,6 @@ const AddMaker = () => {
 
   const submitData = async (e) => {
     e.preventDefault();
-    console.log(data);
     if (passwordCheck.passwordCheck === data.password) {
       data.password = await bcrypt.hash(data.password, 12);
       axios
@@ -43,18 +42,11 @@ const AddMaker = () => {
           setPopOverTitle("Artesaani lisätty"),
           setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi.")
         )
-        // .then(setPopOverTitle("Artesaani lisätty"))
-        // .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
         .then(
           window.setTimeout(() => {
             window.location.assign("/kirjaudu");
           }, 2000)
         );
-      // .catch((error) => {
-      //   setPopOverTitle("Virhe");
-      //   setPopOverMessage("Rekisteröinti ei onnistunut.");
-      //   console.log(error.response.data);
-      // });
       setShowPopOver(true);
       e.target.reset();
     } else {

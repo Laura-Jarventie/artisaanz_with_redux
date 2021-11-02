@@ -20,8 +20,7 @@ const AddProductForMaker = () => {
   const errorMessage =
     "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.";
   const target = useRef(null);
-  /* event.preventDefault(); EI LÖYDY OIKEAA PAIKKAA
-  <Redirect to="/myyjälle" />;*/
+
   useEffect(() => {
     if (history.location.state) {
       setMaker(history.location.state.maker);
@@ -160,11 +159,6 @@ const AddProductForMaker = () => {
             value="Send data"
             ref={target}
           >
-            {/* <Redirect
-              to={{
-                pathname: "/myyjälle",
-              }}
-            /> */}
             Lisää tuote
           </Button>
 

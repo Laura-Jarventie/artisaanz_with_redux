@@ -11,7 +11,7 @@ import { initializeProducts } from "../store/actions/actions";
 const MakersProducts = () => {
   const dispatch = useDispatch();
   const [tuote, setTuote] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [maker, setMaker] = useState();
 
@@ -44,10 +44,10 @@ const MakersProducts = () => {
     setLoading(true);
   }, []);
 
-  const searchValueHandler = (e) => {
+  /*  const searchValueHandler = (e) => {
     setSearchInput(e.target.value);
     console.log(searchInput);
-  };
+  }; */
 
   const filteredProducts = productFilter.reverse().map((tuote) => {
     return (

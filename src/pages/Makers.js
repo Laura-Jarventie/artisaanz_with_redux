@@ -8,7 +8,7 @@ import { initializeMakers } from "../store/actions/actions";
 const Makers = () => {
   const dispatch = useDispatch();
   const makerList = useSelector((state) => state.makers);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   useEffect(() => {
     dispatch(initializeMakers());
