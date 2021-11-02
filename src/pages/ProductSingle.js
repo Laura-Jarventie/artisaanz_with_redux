@@ -50,7 +50,7 @@ const ProductSingle = () => {
             .filter((item) => item.id === 1)
             .map((item) => {
               return (
-                <button
+                <button key={item.id}
                   onClick={() => {
                     setPopupImg(item.kuva);
                     popupHandler();
@@ -67,7 +67,7 @@ const ProductSingle = () => {
           .map((item) => {
             return (
               <ul key={item.id}>
-                <button
+                <button key={item.id}
                   onClick={() => {
                     setPopupImg(item.kuva);
                     popupHandler();

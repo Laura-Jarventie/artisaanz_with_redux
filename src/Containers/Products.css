@@ -69,12 +69,19 @@
   font-weight: 600;
 }
 
+.gridContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
 .filteredProducts {
+  width: 1300px;
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   grid-gap: 0 3rem;
-  margin-left: 40px;
 }
 
 #buyBtn {

@@ -87,7 +87,9 @@ const Products = () => {
         </Route>
         <Route path="/tuotteet" exact>
           <SearchBox search={searchValueHandler} />
+          <div className="gridContainer">
           <div className="filteredProducts">{filteredProducts}</div>
+          </div>
           {seller && (
             <div>
               <button className="artisanbtn" onClick={() => history.goBack()}>
