@@ -10,7 +10,7 @@ const SearchBoxDropdown = ({ search }) => {
           as="select"
           custom
           onChange={search}
-          className="secondSearchBox"
+          className="secondSearchBox form-control"
         >
           <option>Valitse kategoria</option>
           <option>Pussukat</option>

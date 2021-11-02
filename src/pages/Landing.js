@@ -1,5 +1,5 @@
 import React from "react";
-import herobanner from "../assets/herobanner.svg";
+import herobanner from "../assets/herobanner.jpg";
 
 const Landing = () => {
   return (
