@@ -27,7 +27,7 @@ const AddProductForMaker = () => {
     } else {
       console.log(maker);
     }
-  });
+  }, [history.location.state, maker]);
 
   const [data, setData] = useState({
     kuva: [],

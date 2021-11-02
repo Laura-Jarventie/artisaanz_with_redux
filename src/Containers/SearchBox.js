@@ -12,7 +12,7 @@ const SearchBox = ({ search }) => {
     if (history.location.state) {
       setSeller(history.location.state.seller);
     }
-  });
+  }, [history.location.state]);
 
   let searchText = "Hae tuotteen tai artesaanin nimellä";
   if (seller) {

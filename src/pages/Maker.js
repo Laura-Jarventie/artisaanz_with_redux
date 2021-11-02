@@ -14,7 +14,7 @@ const Maker = () => {
     if (history.location.state) {
       setMaker(history.location.state.maker);
     }
-  });
+  }, [history.location.state]);
 
   useEffect(() => {
     dispatch(initializeProducts());

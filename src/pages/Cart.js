@@ -23,7 +23,7 @@ const Cart = () => {
     if (cartList.length > 0) {
       setNoItems(false);
     }
-  });
+  }, [cartList.length]);
 
   cartList.forEach((element) => {
     totalPrice = totalPrice + element.hinta;
